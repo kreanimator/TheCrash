@@ -24,18 +24,18 @@ public class OBJ_Tree1 extends NPC {
         getImage();
         setAction();
 
-        solidArea.x = gp.tileSize+12;
-        solidArea.y = gp.tileSize +24;
+        solidArea.x = 36;
+        solidArea.y = gp.tileSize;
         solidArea.width = 24;
-        solidArea.height = gp.tileSize*2;
+        solidArea.height = gp.tileSize+24;
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
     }
     public void getImage() {
-        int width= gp.tileSize *3;
-        int height = gp.tileSize * 4;
+        int width= gp.tileSize *2;
+        int height = gp.tileSize * 3;
 
         down1 = setup("tiles/trees/tree1/1",width,height );
         down2 = setup("tiles/trees/tree1/2",width,height );
