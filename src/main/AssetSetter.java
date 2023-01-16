@@ -232,6 +232,7 @@ public class AssetSetter {
 
         //OBJECTS
         gp.obj[mapNum][i] = new OBJ_Generator(gp,25,70);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator(gp,25,70);i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkr(gp,44,59);
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkl(gp,16,59);
