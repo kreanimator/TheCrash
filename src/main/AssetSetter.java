@@ -8,6 +8,7 @@ import object.exterior.*;
 import object.exterior.crates.*;
 import object.exterior.doors.*;
 import object.exterior.fences.*;
+import object.exterior.ruins.*;
 import object.fridges.*;
 import object.misc.*;
 import object.trash.*;
@@ -231,8 +232,7 @@ public class AssetSetter {
 
 
         //OBJECTS
-        gp.obj[mapNum][i] = new OBJ_Generator(gp,25,70);i++;
-        gp.obj[mapNum][i] = new OBJ_Generator(gp,25,70);i++;
+        gp.obj[mapNum][i] = new OBJ_Ruins5(gp,25,70);i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkr(gp,44,59);
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkl(gp,16,59);
