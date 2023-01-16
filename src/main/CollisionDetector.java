@@ -143,6 +143,7 @@ public class CollisionDetector {
         }
         return index;
     }
+
     //NPC OR MONSTER
     public int checkEntity(Entity entity, Entity [][] target){
         int index =999;

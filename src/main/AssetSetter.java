@@ -3,18 +3,16 @@ package main;
 import data.Progress;
 import enemies.*;
 import entity.*;
-import object.barrels.*;
+import object.exterior.barrels.*;
 import object.exterior.*;
-import object.exterior.crates.*;
 import object.exterior.doors.*;
 import object.exterior.fences.*;
-import object.exterior.ruins.*;
-import object.exterior.streetlights.OBJ_Streetlight1;
-import object.fridges.*;
+import object.exterior.toilets.*;
+import object.exterior.fridges.*;
 import object.misc.*;
-import object.trash.*;
-import object.trees.OBJ_Tree1;
-import object.walls.*;
+import object.exterior.trash.*;
+import object.trees.*;
+import object.exterior.walls.*;
 import tile_interactive.*;
 
 
@@ -171,6 +169,10 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new WL_Oldwall(gp,37,57);i++;
         gp.obj[mapNum][i] = new WL_Oldwall2(gp,30,57);i++;
         gp.obj[mapNum][i] = new WL_Oldwall(gp,23,57);i++;
+        gp.obj[mapNum][i] = new WL_Brickpart2(gp,22,57);i++;
+        gp.obj[mapNum][i] = new WL_Brickpart2(gp,22,47);i++;
+        gp.obj[mapNum][i] = new WL_Brickpart1(gp,38,42);i++;
+        gp.obj[mapNum][i] = new WL_Brickpart1(gp,38,52);i++;
 
         gp.obj[mapNum][i] = new WL_Sidewall(gp,17,38);i++;
         gp.obj[mapNum][i] = new WL_Sidewall(gp,17,40);i++;
@@ -218,10 +220,14 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_ToxicBarrels3(gp,66,64);i++;
 
         //FRIDGES
-        gp.obj[mapNum][i] = new OBJ_Fridge1(gp,49,16);i++;
-        gp.obj[mapNum][i] = new OBJ_Fridge3(gp,50,16);i++;
-        gp.obj[mapNum][i] = new OBJ_Fridge2(gp,77,16);i++;
-        gp.obj[mapNum][i] = new OBJ_Fridge4(gp,78,16);i++;
+        gp.obj[mapNum][i] = new OBJ_Fridge1(gp,49,16);
+        gp.obj[mapNum][i].setLoot(new OBJ_SweetBubaleh(gp));i++;
+        gp.obj[mapNum][i] = new OBJ_Fridge3(gp,50,16);
+        gp.obj[mapNum][i].setLoot(new OBJ_SweetBubaleh(gp));i++;
+        gp.obj[mapNum][i] = new OBJ_Fridge2(gp,77,16);
+        gp.obj[mapNum][i].setLoot(new OBJ_SweetBubaleh(gp));i++;
+        gp.obj[mapNum][i] = new OBJ_Fridge4(gp,78,16);
+        gp.obj[mapNum][i].setLoot(new OBJ_SweetBubaleh(gp));i++;
 
 
         //TRASH
@@ -233,7 +239,7 @@ public class AssetSetter {
 
 
         //OBJECTS
-        gp.obj[mapNum][i] = new OBJ_Streetlight1(gp,25,70);i++;
+        gp.obj[mapNum][i] = new OBJ_Toilet2(gp,25,70);i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkr(gp,44,59);
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkl(gp,16,59);

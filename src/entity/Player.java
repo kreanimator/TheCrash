@@ -7,6 +7,7 @@ import object.armor.OBJ_Shield;
 import object.misc.OBJ_Flashlight;
 import object.misc.OBJ_Key;
 import object.misc.OBJ_KeyCard;
+import object.misc.OBJ_SweetBubaleh;
 import object.projectiles.OBJ_Bullet;
 import object.projectiles.OBJ_ShotgunBullet;
 import object.weapon.OBJ_Ammo_Shotgun;
@@ -110,6 +111,7 @@ public class Player extends Entity {
 //        inventory.add(new OBJ_Lockpick(gp));
         inventory.add(new OBJ_KeyCard(gp));
        inventory.add(new OBJ_Flashlight(gp));
+        inventory.add(new OBJ_SweetBubaleh(gp));
 
     }
 
@@ -459,10 +461,9 @@ public class Player extends Entity {
             }
 
             //OBSTACLES
-            else if (gp.obj[gp.currentMap][i].type == typeObstacle) {
+            else if (gp.obj[gp.currentMap][i].type == typeObstacle ) {
                 if (keyH.ePressed) {
                     attackCanceled = true;
-
                     gp.obj[gp.currentMap][i].interact();
                 }
             }

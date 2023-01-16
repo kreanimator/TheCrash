@@ -124,6 +124,7 @@ public class Entity {
     public final int typeShield = 12;
 
 
+
     public Entity(GamePanel gp) {
         this.gp = gp;
 

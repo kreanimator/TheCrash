@@ -46,6 +46,7 @@ public class EntityGenerator {
             case OBJ_KeyCard.objName -> new OBJ_KeyCard(gp);
             case OBJ_Lockpick.objName -> new OBJ_Lockpick(gp);
             case OBJ_Money.objName -> new OBJ_Money(gp);
+            case OBJ_SweetBubaleh.objName -> new OBJ_SweetBubaleh(gp);
             case OBJ_Tent.objName -> new OBJ_Tent(gp);
             case OBJ_Acid.objName -> new OBJ_Acid(gp);
             case OBJ_Bullet.objName -> new OBJ_Bullet(gp);

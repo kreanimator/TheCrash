@@ -335,11 +335,12 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
             // SORT
-
-            entityList.sort((o1, o2) -> {
-                int result = Integer.compare(o1.worldY, o2.worldY);
-                return result;
-            });
+            entityList.sort(Comparator.comparingInt(o -> o.worldY));
+            //The old code that Intellij changed to comparator
+//            entityList.sort((o1, o2) -> {
+//                int result = Integer.compare(o1.worldY, o2.worldY);
+//                return result;
+//            });
             //DRAW ENTITIES
 
             for (int i = 0; i < entityList.size(); i++) {
@@ -348,17 +349,21 @@ public class GamePanel extends JPanel implements Runnable {
             // EMPTY ENTITY LIST
             entityList.clear();
 
-            //MINIMAP
-            map.drawMiniMap(g2);
+
 
             //Environment
             eManager.draw(g2);
 
-            //CUTSCENE MANAGER
+            //MINIMAP
+            map.drawMiniMap(g2);
+
+
+
 
 
             //UI
             ui.draw(g2);
+            //CUTSCENE MANAGER
             cutSceneManager.draw(g2);
         }
 
