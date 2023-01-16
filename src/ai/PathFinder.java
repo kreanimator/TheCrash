@@ -81,7 +81,7 @@ public class PathFinder {
             if (gp.tileM.tiles[tileNum].collision) {
                 node[col][row].solid = true;
             }
-//            //CHECK OBJECTS
+            //CHECK OBJECTS
             for (int j = 0; j < gp.obj[1].length; j++) {
                 if (gp.obj[gp.currentMap][j] != null && gp.obj[gp.currentMap][j].collision) {
                     int oCol = gp.obj[gp.currentMap][j].worldX/gp.tileSize;
@@ -98,10 +98,7 @@ public class PathFinder {
                     node[itCol][itCRow].solid = true;
                 }
             }
-
-
             //SET COST
-
             getCost(node[col][row]);
 
             col++;

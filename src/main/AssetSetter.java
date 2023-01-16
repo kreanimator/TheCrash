@@ -300,6 +300,7 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_Vase(gp,18,85);i++;
         gp.iTile[mapNum][i] = new IT_Vase(gp,20,85);i++;
 
+
         mapNum = 1;
         i=0;
         gp.iTile[mapNum][i] = new IT_Vase(gp,16,41);i++;
