@@ -235,7 +235,6 @@ public class Entity {
         target.knockbackDirection = attacker.direction;
         target.speed += knockBackPower;
         target.knockBack = true;
-
     }
 
     public void checkCollision() {

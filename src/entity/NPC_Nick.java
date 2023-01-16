@@ -44,16 +44,16 @@ public class NPC_Nick extends NPC{
     }
 
     public void setAction() {
-//        if (onPath) {
-//            int goalCol = 32;
-//            int goalRow = 84;
-////            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
-////            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
-//            searchPath(goalCol, goalRow);
-//            finishedPath = true;
-//            speed = 1;
-//
-//        } else {
+        if (onPath) {
+            int goalCol = 30;
+            int goalRow = 71;
+//            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
+//            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
+            searchPath(goalCol, goalRow);
+            finishedPath = true;
+            speed = 1;
+
+        } else {
             actionLockCounter++;
             if (actionLockCounter == 240) {
                 Random random = new Random();
@@ -74,7 +74,7 @@ public class NPC_Nick extends NPC{
                 actionLockCounter = 0;
             }
         }
-//    }
+    }
 
     public void setDialogue() {
         dialogues[0][0] = "Hey, you woke up ! That's Amazing!";

@@ -291,7 +291,14 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_Vase(gp,27,79);i++;
         gp.iTile[mapNum][i] = new IT_Box(gp,46,12);i++;
         gp.iTile[mapNum][i] = new IT_Box(gp,46,13);i++;
-        gp.iTile[mapNum][i] = new IT_Box(gp,46,14);
+        gp.iTile[mapNum][i] = new IT_Box(gp,46,14);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,19,83);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,18,83);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,83);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,18,84);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,84);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,18,85);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,85);i++;
 
         mapNum = 1;
         i=0;
@@ -305,7 +312,7 @@ public class AssetSetter {
     public void setNPC() {
         int mapNum = 0;
         int i =0;
-        gp.npc[mapNum][i] = new NPC_Nick(gp,39,83);i++;
+        gp.npc[mapNum][i] = new NPC_Nick(gp,19,84);i++;
 
         //TREES
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,17,70);i++;
