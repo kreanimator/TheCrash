@@ -31,6 +31,8 @@ public class Player extends Entity {
     int standCounter = 0;
     public int timesUsed = 0;
     public int timesDrinked = 0;
+    public int addictionCounter = 0;
+    public int hangoverCounter = 0;
 
 
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -123,6 +125,7 @@ public class Player extends Entity {
         inventory.add(new OBJ_Booze(gp));
         inventory.add(new OBJ_Booze(gp));
         inventory.add(new OBJ_Booze(gp));
+        inventory.add(new OBJ_HPPack(gp));
 
     }
 
@@ -345,8 +348,17 @@ public class Player extends Entity {
             }
             if(timesUsed ==3){
                 addict = true;
+                addictionCounter++;
                 speed = 1;
+                timesUsed =0;
+                if(addictionCounter == 600){
+
+                    speed = defaultSpeed;
+                    addictionCounter = 0;
+                    addict = false;
+                }
             }
+
 
             if(drunk){
                 useCounter++;
@@ -358,8 +370,16 @@ public class Player extends Entity {
             }
             if(timesDrinked ==3){
                 hangover = true;
+                hangoverCounter++;
                 defense = 0;
+                timesDrinked =0;
+                if (hangoverCounter == 600){
+                    hangover = false;
+                    defense = getDefense();
+                    hangoverCounter = 0;
+                }
             }
+
 
 
 
@@ -849,23 +869,23 @@ public class Player extends Entity {
             //CHECK SOLID AREA
             g2.setColor(Color.RED);
             g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
-            if (addict){
-                x = gp.screenWidth/2;
-                y = gp.tileSize;
-                g2.setFont(gp.ui.myFont.deriveFont(20f));
-                g2.setColor(Color.GREEN);
-                g2.drawString("ADDICTED",x,y);
-            }
-            if (hangover){
-                x = gp.screenWidth/2;
-                y = gp.tileSize;
-                g2.setFont(gp.ui.myFont.deriveFont(20f));
-                g2.setColor(Color.GREEN);
-                g2.drawString("HANGOVER",x,y);
-            }
+
         }
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-
+        if (addict){
+            x = gp.screenWidth/2;
+            y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[ADDICTED]",x,y);
+        }
+        if (hangover){
+            x = gp.screenWidth/2 - (gp.tileSize *4);
+            y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[HANGOVER]",x,y);
+        }
 
     }
 
