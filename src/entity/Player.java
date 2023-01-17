@@ -273,14 +273,8 @@ public class Player extends Entity {
                 direction = "right";
 
             }
-            if(underEffect){
-                useCounter++;
-                if (useCounter ==30){
-                    speed = defaultSpeed;
-                    underEffect = false;
-                    useCounter = 0;
-                }
-            }
+
+
 
             // CHECK TILE COLLISION
 
@@ -329,6 +323,16 @@ public class Player extends Entity {
                     case "right" -> worldX += speed;
                 }
             }
+            //Check if under effect
+//            if(underEffect){
+//                useCounter++;
+//                if (useCounter == 30){
+//                    speed = defaultSpeed;
+//                    underEffect = false;
+//                    useCounter = 0;
+//                }
+//            }
+
 
             if (keyH.ePressed && !attackCanceled ) {
                 if (currentWeapon.type == typeMelee || currentWeapon.type == typeCrowbar) {
@@ -337,6 +341,7 @@ public class Player extends Entity {
                     spriteCounter++;
                 }
             }
+
             gp.keyH.ePressed = false;
 
             attackCanceled = false;
@@ -651,6 +656,7 @@ public class Player extends Entity {
                 //later
 
             }
+
         }
     }
 

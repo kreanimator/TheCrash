@@ -53,7 +53,7 @@ public class Entity {
     public boolean inRage = false;
     public boolean sleep = false;
     public boolean drawing = true;
-    public boolean underEffect = false;
+    public boolean underEffect;
 
 
     //COUNTER

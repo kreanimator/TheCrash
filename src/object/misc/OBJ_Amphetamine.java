@@ -25,17 +25,11 @@ public class OBJ_Amphetamine extends Entity {
         dialogues[0][0] = "You used" + name + "\nYour speed was increased for "+ value + " !";
     }
     public boolean use (Entity entity){
+
         startDialogue(this,0);
+        underEffect = true;
         entity.speed += value;
         gp.playSE(34);
-        underEffect = true;
-//        useCounter++;
-//        if(useCounter == 30){
-//            entity.speed = entity.defaultSpeed;
-//            useCounter = 0;
-//        }
-
-
         return true;
 
     }
