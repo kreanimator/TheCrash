@@ -19,6 +19,13 @@ public class OBJ_Bullet extends Projectiles {
         maxHP = 80;
         life = maxHP;
         knockBackPower = 0;
+
+        solidArea.width = 5;
+        solidArea.height = 5;
+        solidArea.x = gp.tileSize/2;
+        solidArea.y = gp.tileSize/2;
+        solidAreaDefaultX=solidArea.x;
+        solidAreaDefaultY=solidArea.y;
         attack = 3;
         useCost = 1;
         alive = false;
@@ -57,6 +64,7 @@ public class OBJ_Bullet extends Projectiles {
         Color color = new Color(220, 1, 44);
         return color;
     }
+
     public int getParticleSize(){
         int size = 8;
         return size;

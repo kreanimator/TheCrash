@@ -14,6 +14,9 @@ public class Projectiles extends  Entity{
         this.worldY = worldY;
         this.direction = direction;
         this.alive = alive;
+        this.solidArea.x = solidAreaDefaultX;
+        this.solidArea.y = solidAreaDefaultY;
+
         this.user = user;
         this.life = this.maxHP;
 
@@ -28,6 +31,21 @@ public class Projectiles extends  Entity{
                 generateParticle(user.projectiles,gp.enemy[gp.currentMap][enemyIndex]);
                 alive = false;
             }
+            int objIndex = gp.cDetector.checkEntity(this,gp.obj);
+            if(objIndex != 999){
+                generateParticle(user.projectiles,user.projectiles);
+                alive = false;
+            }
+            int iTIndex = gp.cDetector.checkEntity(this,gp.iTile);
+            if(iTIndex != 999){
+                generateParticle(user.projectiles,user.projectiles);
+                alive = false;
+            }
+            int npcIndex = gp.cDetector.checkEntity(this,gp.npc);
+            if(npcIndex != 999){
+                generateParticle(user.projectiles,gp.npc[gp.currentMap][npcIndex]);
+                alive = false;
+            }
         }
         if(user != gp.player ){
 
@@ -35,6 +53,21 @@ public class Projectiles extends  Entity{
             if(!gp.player.invincible && contactPlayer){
                 damagePlayer(attack);
                 generateParticle(user.projectiles,gp.player);
+                alive = false;
+            }
+            int objIndex = gp.cDetector.checkEntity(this,gp.obj);
+            if(objIndex != 999){
+                //generateParticle(user.projectiles,gp.obj[gp.currentMap][objIndex]);
+                alive = false;
+            }
+            int iTIndex = gp.cDetector.checkEntity(this,gp.iTile);
+            if(iTIndex != 999){
+                generateParticle(user.projectiles,gp.iTile[gp.currentMap][iTIndex]);
+                alive = false;
+            }
+            int npcIndex = gp.cDetector.checkEntity(this,gp.npc);
+            if(npcIndex != 999){
+                generateParticle(user.projectiles,gp.npc[gp.currentMap][npcIndex]);
                 alive = false;
             }
         }
