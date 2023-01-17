@@ -33,7 +33,7 @@ public class Main {
    TODO: 4. Fix shot cancellation while interacting with objects and npc's. Update: Solved 17.01.2023
    TODO: 5. Fix save and load method (Do not fix the current condition of enemies, npcs,objects etc).
    TODO: 7. Fix pathfinding (Entity does not see high and long objects need to add multiple checkpoints for each object)
-   TODO: 8. Develop addiction mechanics.
+   TODO: 8. Develop addiction mechanics. DONE 17.01.2023
    TODO: 9. Fix position of light circle while player is near to the edge of the map.
    TODO: 10. Develop multiple lighting system.
    TODO: 11. Add interior objects.

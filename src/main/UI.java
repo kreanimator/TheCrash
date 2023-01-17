@@ -89,6 +89,7 @@ public class UI {
             drawPlayerAmmo();
             drawMessage();
 
+
         }
         //PAUSESTATE
         if (gp.gameState == gp.pauseState) {

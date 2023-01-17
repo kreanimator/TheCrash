@@ -82,10 +82,10 @@ public class PathFinder {
                 node[col][row].solid = true;
             }
             //CHECK OBJECTS
-            for (int j = 0; j < gp.obj[1].length; j++) {
-                if (gp.obj[gp.currentMap][j] != null && gp.obj[gp.currentMap][j].collision) {
-                    int oCol = gp.obj[gp.currentMap][j].worldX/gp.tileSize;
-                    int oRow = gp.obj[gp.currentMap][j].worldY/gp.tileSize;
+            for (int i = 0; i < gp.obj[1].length; i++) {
+                if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].collision) {
+                    int oCol = gp.obj[gp.currentMap][i].worldX/gp.tileSize;
+                    int oRow = gp.obj[gp.currentMap][i].worldY/gp.tileSize;
                     node[oCol][oRow].solid = true;
                 }
             }

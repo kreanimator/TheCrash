@@ -9,6 +9,8 @@ public class OBJ_Amphetamine extends Entity {
     public final static String objName = "Amphetamine";
 
 
+
+
     public OBJ_Amphetamine(GamePanel gp) {
         super(gp);
         this.gp = gp;
@@ -27,9 +29,13 @@ public class OBJ_Amphetamine extends Entity {
     public boolean use (Entity entity){
 
         startDialogue(this,0);
-        underEffect = true;
+
         entity.speed += value;
+        gp.player.underEffect = true;
         gp.playSE(34);
+        gp.player.timesUsed++;
+
+
         return true;
 
     }

@@ -14,7 +14,7 @@ import java.util.Random;
 public class Entity {
 
     public GamePanel gp;
-    public BufferedImage image, image2, image3, image4, image5;
+    public BufferedImage image, image2, image3;
     public BufferedImage up1, up2, up3, down1, down2, down3, left1, left2, left3, right1, right2, right3;
     public BufferedImage atkup1, atkup2, atkup3, atkdown1, atkdown2, atkdown3, atkleft1, atkleft2,
             atkleft3, atkright1, atkright2, atkright3, guardUp, guardDown, guardLeft, guardRight;
@@ -53,7 +53,7 @@ public class Entity {
     public boolean inRage = false;
     public boolean sleep = false;
     public boolean drawing = true;
-    public boolean underEffect;
+
 
 
     //COUNTER
@@ -114,8 +114,8 @@ public class Entity {
 
     //TYPE
     public int type;
-    public final int typePlayer = 0;
-    public final int typeNPC = 1;
+//    public final int typePlayer = 0;
+//    public final int typeNPC = 1;
     public final int typeEnemy = 2;
     public final int typeMelee = 3;
     public final int typeCrowbar = 4;
@@ -274,6 +274,7 @@ public class Entity {
                     }
 
                 }
+
                 knockBackCounter++;
                 if (knockBackCounter == 10) {
                     knockBackCounter = 0;

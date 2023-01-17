@@ -26,6 +26,8 @@ public class OBJ_Booze extends Entity {
     public boolean use (Entity entity){
         startDialogue(this,0);
         entity.defense += value;
+        gp.player.drunk = true;
+        gp.player.timesDrinked ++;
         gp.playSE(35);
         return true;
 

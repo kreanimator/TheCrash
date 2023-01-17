@@ -23,8 +23,14 @@ public class Player extends Entity {
     public boolean attackCanceled = false;
     public boolean shotCanceled = false;
     public boolean updateLight = false;
+    public boolean underEffect;
+    public boolean drunk;
+    public boolean addict = false;
+    public boolean hangover = false;
 
     int standCounter = 0;
+    public int timesUsed = 0;
+    public int timesDrinked = 0;
 
 
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -112,6 +118,10 @@ public class Player extends Entity {
        inventory.add(new OBJ_Flashlight(gp));
         inventory.add(new OBJ_SweetBubaleh(gp));
         inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Booze(gp));
+        inventory.add(new OBJ_Booze(gp));
         inventory.add(new OBJ_Booze(gp));
 
     }
@@ -276,6 +286,7 @@ public class Player extends Entity {
 
 
 
+
             // CHECK TILE COLLISION
 
             collisionOn = false;
@@ -324,14 +335,32 @@ public class Player extends Entity {
                 }
             }
             //Check if under effect
-//            if(underEffect){
-//                useCounter++;
-//                if (useCounter == 30){
-//                    speed = defaultSpeed;
-//                    underEffect = false;
-//                    useCounter = 0;
-//                }
-//            }
+            if(underEffect){
+                useCounter++;
+                if (useCounter == 600){
+                    speed = defaultSpeed;
+                    underEffect = false;
+                    useCounter = 0;
+                }
+            }
+            if(timesUsed ==3){
+                addict = true;
+                speed = 1;
+            }
+
+            if(drunk){
+                useCounter++;
+                if (useCounter == 600){
+                    defense = getDefense();
+                    drunk = false;
+                    useCounter = 0;
+                }
+            }
+            if(timesDrinked ==3){
+                hangover = true;
+                defense = 0;
+            }
+
 
 
             if (keyH.ePressed && !attackCanceled ) {
@@ -370,6 +399,9 @@ public class Player extends Entity {
                 standCounter = 0;
             }
         }
+
+        //Check if under effect
+
         if (gp.keyH.shotKeyPressed && !projectiles.alive && shotAvailableCounter == 30
                 && projectiles.haveResource(this) && !shotCanceled) {
             shooting = true;
@@ -502,6 +534,7 @@ public class Player extends Entity {
                 gp.ui.addMessage(text);
                 gp.obj[gp.currentMap][i] = null;
             }
+
         }
 
 
@@ -555,7 +588,7 @@ public class Player extends Entity {
 
                 gp.enemy[gp.currentMap][i].life -= damage;
 
-                gp.ui.addMessage(String.valueOf(damage + " damage!"));
+                gp.ui.addMessage(damage + " damage!");
                 gp.enemy[gp.currentMap][i].invincible = true;
                 generateParticle(gp.player.currentWeapon, gp.enemy[gp.currentMap][i]);
                 gp.enemy[gp.currentMap][i].damageReaction();
@@ -816,8 +849,24 @@ public class Player extends Entity {
             //CHECK SOLID AREA
             g2.setColor(Color.RED);
             g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+            if (addict){
+                x = gp.screenWidth/2;
+                y = gp.tileSize;
+                g2.setFont(gp.ui.myFont.deriveFont(20f));
+                g2.setColor(Color.GREEN);
+                g2.drawString("ADDICTED",x,y);
+            }
+            if (hangover){
+                x = gp.screenWidth/2;
+                y = gp.tileSize;
+                g2.setFont(gp.ui.myFont.deriveFont(20f));
+                g2.setColor(Color.GREEN);
+                g2.drawString("HANGOVER",x,y);
+            }
         }
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+
+
     }
 
 }
