@@ -35,12 +35,8 @@ public class WL_Brick2 extends Object {
         down1 = setup("tiles/wall/brickwall2", width, height);
 
     }
-
-    public void setAction() {
-
-    }
-
-    public void update() {
-
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 }

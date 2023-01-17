@@ -37,11 +37,8 @@ public class OBJ_Fenceside1 extends Object {
 
     }
 
-    public void setAction() {
-
-    }
-
-    public void update() {
-
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 }

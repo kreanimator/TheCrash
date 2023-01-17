@@ -318,7 +318,7 @@ public class Player extends Entity {
                 }
             }
 
-            if (keyH.ePressed && !attackCanceled) {
+            if (keyH.ePressed && !attackCanceled ) {
                 if (currentWeapon.type == typeMelee || currentWeapon.type == typeCrowbar) {
                     gp.playSE(4);
                     attacking = true;
@@ -326,8 +326,9 @@ public class Player extends Entity {
                 }
             }
             gp.keyH.ePressed = false;
+
             attackCanceled = false;
-            shotCanceled = false;
+
             guarding = false;
             guardCounter = 0;
 
@@ -382,6 +383,8 @@ public class Player extends Entity {
             }
 
         }
+        gp.keyH.shotKeyPressed = false;
+        shotCanceled = false;
         if (invincible) {
             invincibleCounter++;
             if (invincibleCounter > 60) {
@@ -464,7 +467,7 @@ public class Player extends Entity {
 
             //OBSTACLES
             else if (gp.obj[gp.currentMap][i].type == typeObstacle ) {
-                if (keyH.ePressed) {
+                if (keyH.ePressed || keyH.shotKeyPressed) {
                     attackCanceled = true;
                     shotCanceled = true;
                     gp.obj[gp.currentMap][i].interact();
@@ -489,7 +492,7 @@ public class Player extends Entity {
 
     public void interactNPC(int i) {
         if (i != 999) {
-        if (gp.keyH.ePressed) {
+        if (gp.keyH.ePressed || gp.keyH.shotKeyPressed) {
                 attackCanceled = true;
                 shotCanceled = true;
                 gp.npc[gp.currentMap][i].speak();

@@ -35,11 +35,9 @@ public class WL_Barn extends Object {
 
     }
 
-    public void setAction() {
-
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 
-    public void update() {
-
-    }
 }

@@ -32,7 +32,9 @@ public class OBJ_Tires1 extends Object {
         int height = gp.tileSize-12;
 
         down1 = setup("tiles/exterior/tires1", width, height);
-
-
+    }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 }

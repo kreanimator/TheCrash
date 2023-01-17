@@ -38,11 +38,8 @@ public class OBJ_Pipes extends Object {
 
     }
 
-    public void setAction() {
-
-    }
-
-    public void update() {
-
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 }

@@ -35,12 +35,8 @@ public class WL_Barn2 extends Object {
         down1 = setup("tiles/wall/barn2", width, height);
 
     }
-
-    public void setAction() {
-
-    }
-
-    public void update() {
-
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 }

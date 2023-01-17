@@ -47,6 +47,10 @@ public class OBJ_CampFire extends NPC {
         down3 = setup("objects/campfire/6", width, height);
 
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 
 
 }

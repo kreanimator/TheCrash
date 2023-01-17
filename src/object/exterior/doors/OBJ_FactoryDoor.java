@@ -40,6 +40,9 @@ public class OBJ_FactoryDoor extends Object {
             down1 = image2;
             opened = true;
             collision = false;
+        }else{
+            gp.player.attackCanceled = false;
+            gp.player.shotCanceled = false;
         }
 
     }

@@ -34,4 +34,8 @@ public class OBJ_Streetlight6 extends Object {
 
         down1 = setup("tiles/exterior/streetlight6", width, height);
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 }

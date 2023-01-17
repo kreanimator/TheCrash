@@ -36,5 +36,9 @@ public class OBJ_Ruins5 extends Object {
 
 
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 
 }

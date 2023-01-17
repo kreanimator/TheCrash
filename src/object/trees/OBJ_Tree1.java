@@ -50,5 +50,9 @@ public class OBJ_Tree1 extends NPC {
         right2 = setup("tiles/trees/tree1/11",width,height );
         right3 = setup("tiles/trees/tree1/12",width,height );
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 
 }

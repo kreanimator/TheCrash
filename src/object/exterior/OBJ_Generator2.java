@@ -28,6 +28,10 @@ public class OBJ_Generator2 extends Object {
         solidAreaDefaultY = solidArea.y;
 
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 
     }
 

@@ -37,4 +37,8 @@ public class OBJ_Crates4 extends Object {
 
 
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 }
