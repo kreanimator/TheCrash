@@ -36,11 +36,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     int screenWidth2 = screenWidth;
     int screenHeight2 = screenHeight;
-
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
-    //    BufferedImage tempScreen;
-//    Graphics2D g2;
     boolean fullScreenOn = false;
 
     //FPS
@@ -53,7 +50,6 @@ public class GamePanel extends JPanel implements Runnable {
     Sound se = new Sound();
     Map map = new Map(this);
     SaveLoad saveLoad = new SaveLoad(this);
-
     public CollisionDetector cDetector = new CollisionDetector(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);

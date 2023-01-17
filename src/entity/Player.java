@@ -24,6 +24,7 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
     public boolean attackCanceled = false;
+    public boolean shotCanceled = false;
     public boolean updateLight = false;
     int standCounter = 0;
 
@@ -326,6 +327,7 @@ public class Player extends Entity {
             }
             gp.keyH.ePressed = false;
             attackCanceled = false;
+            shotCanceled = false;
             guarding = false;
             guardCounter = 0;
 
@@ -351,8 +353,8 @@ public class Player extends Entity {
             }
         }
         if (gp.keyH.shotKeyPressed && !projectiles.alive && shotAvailableCounter == 30
-                && projectiles.haveResource(this) && !attackCanceled) {
-            attacking = true;
+                && projectiles.haveResource(this) && !shotCanceled) {
+            shooting = true;
             //SET DEFAULT BULLET POSITION
             projectiles.set(worldX, worldY, direction, true, this);
             //SUBTRACT THE COST
@@ -464,6 +466,7 @@ public class Player extends Entity {
             else if (gp.obj[gp.currentMap][i].type == typeObstacle ) {
                 if (keyH.ePressed) {
                     attackCanceled = true;
+                    shotCanceled = true;
                     gp.obj[gp.currentMap][i].interact();
                 }
             }
@@ -488,6 +491,7 @@ public class Player extends Entity {
         if (i != 999) {
         if (gp.keyH.ePressed) {
                 attackCanceled = true;
+                shotCanceled = true;
                 gp.npc[gp.currentMap][i].speak();
             }
             gp.npc[gp.currentMap][i].move(direction);

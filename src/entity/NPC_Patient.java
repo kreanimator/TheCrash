@@ -17,12 +17,12 @@ public class NPC_Patient extends NPC{
         defaultSpeed = 0;
         speed = defaultSpeed;
         solidArea = new Rectangle();
-        solidArea.x = 2;
-        solidArea.y = 6;
+        solidArea.x = 32;
+        solidArea.y = 36;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 44;
-        solidArea.height = 40;
+        solidArea.height = 15;
 
         dialogueSet = -1;
         getImage();
@@ -30,10 +30,12 @@ public class NPC_Patient extends NPC{
     }
 
     public void getImage() {
+        int width = (gp.tileSize *2)+12;
+        int height = (gp.tileSize *2)+12;
 
-        down1 = setup("npc/patient/down1", gp.tileSize, gp.tileSize);
-        down2 = setup("npc/patient/down2", gp.tileSize, gp.tileSize);
-        down3 = setup("npc/patient/down3", gp.tileSize, gp.tileSize);
+        down1 = setup("npc/patient/down1", width, height);
+        down2 = setup("npc/patient/down2", width, height);
+        down3 = setup("npc/patient/down3", width, height);
 
     }
 

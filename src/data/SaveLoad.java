@@ -140,6 +140,7 @@ public class SaveLoad {
 
         } catch (Exception e) {
             System.out.println("Load exception!");
+            System.out.println(e);
         }
     }
 }

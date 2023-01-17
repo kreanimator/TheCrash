@@ -313,7 +313,7 @@ public class AssetSetter {
     public void setNPC() {
         int mapNum = 0;
         int i =0;
-        gp.npc[mapNum][i] = new NPC_Nick(gp,19,84);i++;
+        gp.npc[mapNum][i] = new NPC_Nick(gp,37,83);i++;
 
         //TREES
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,17,70);i++;
@@ -321,6 +321,7 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new OBJ_CampFire(gp,31,79);i++;
         gp.npc[mapNum][i] = new OBJ_Trashbin(gp,80,19);i++;
         gp.npc[mapNum][i] = new OBJ_Trashbin(gp,63,30);i++;
+
 
         mapNum = 1;
         i=0;

@@ -21,6 +21,7 @@ public class UI {
     public Font myFont;
     BufferedImage hpfull, hphalf, hpblank, pistolAmmo, shotgunAmmo, coin,background;
     public String currentDialogue = "";
+    public String currentQuest = "";
 
     public boolean messageOn = false;
     ArrayList<String> message = new ArrayList<>();
@@ -744,8 +745,18 @@ public class UI {
         int frameY = gp.tileSize;
         int frameWidth = gp.tileSize * 8;
         int frameHeight = gp.tileSize * 10;
+        int x = gp.tileSize * 2;
+        int y = gp.tileSize / 2;
 
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10f));
+
+        currentQuest = npc.quests[npc.questIndex];
+
+        if(npc.quests[npc.questIndex] != null){
+            g2.drawString(currentQuest, x, y);
+            y += 40;
+        }
     }
 
 

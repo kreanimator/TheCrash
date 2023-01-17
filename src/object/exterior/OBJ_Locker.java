@@ -9,8 +9,6 @@ public class OBJ_Locker extends Object {
     GamePanel gp;
     public final static String objName = "Locker";
 
-
-
     public OBJ_Locker(GamePanel gp, int col , int row) {
         super(gp,col,row);
         this.gp = gp;

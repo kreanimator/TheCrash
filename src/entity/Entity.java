@@ -23,6 +23,7 @@ public class Entity {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collision = false;
     public String[][] dialogues = new String[20][20];
+    public String [] quests = new String[20];
     public Entity attacker;
     public Entity linkedEntity;
     public boolean temp = false;
@@ -33,9 +34,11 @@ public class Entity {
     public int spriteNumber = 1;
     public int dialogueSet = 0;
     public int dialogueIndex = 0;
+    public int questIndex = 0;
     public boolean collisionOn = false;
     public boolean invincible = false;
     public boolean attacking = false;
+    public boolean shooting = false;
     public boolean alive = true;
     public boolean dying = false;
     public boolean hpBarOn = false;
@@ -693,10 +696,6 @@ public class Entity {
         }
         return inCamera;
     }
-
-
-
-
 
     public void draw(Graphics2D g2) {
         BufferedImage image = null;
