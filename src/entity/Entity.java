@@ -53,6 +53,7 @@ public class Entity {
     public boolean inRage = false;
     public boolean sleep = false;
     public boolean drawing = true;
+    public boolean underEffect = false;
 
 
     //COUNTER
@@ -65,6 +66,7 @@ public class Entity {
     public int knockBackCounter = 0;
     public int guardCounter = 0;
     public int offBalanceCounter = 0;
+    public int useCounter = 0;
 
     //CHARACTERS ATRIBUTES
     public String name;

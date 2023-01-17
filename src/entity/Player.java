@@ -4,10 +4,7 @@ import main.GamePanel;
 import main.KeyHandler;
 import object.armor.OBJ_Armor_Learther;
 import object.armor.OBJ_Shield;
-import object.misc.OBJ_Flashlight;
-import object.misc.OBJ_Key;
-import object.misc.OBJ_KeyCard;
-import object.misc.OBJ_SweetBubaleh;
+import object.misc.*;
 import object.projectiles.OBJ_Bullet;
 import object.projectiles.OBJ_ShotgunBullet;
 import object.weapon.OBJ_Ammo_Shotgun;
@@ -26,6 +23,7 @@ public class Player extends Entity {
     public boolean attackCanceled = false;
     public boolean shotCanceled = false;
     public boolean updateLight = false;
+
     int standCounter = 0;
 
 
@@ -113,6 +111,8 @@ public class Player extends Entity {
         inventory.add(new OBJ_KeyCard(gp));
        inventory.add(new OBJ_Flashlight(gp));
         inventory.add(new OBJ_SweetBubaleh(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Booze(gp));
 
     }
 
@@ -273,6 +273,14 @@ public class Player extends Entity {
                 direction = "right";
 
             }
+            if(underEffect){
+                useCounter++;
+                if (useCounter ==30){
+                    speed = defaultSpeed;
+                    underEffect = false;
+                    useCounter = 0;
+                }
+            }
 
             // CHECK TILE COLLISION
 
@@ -305,6 +313,10 @@ public class Player extends Entity {
             if (currentWeapon.type == typeShotgun) {
                 projectiles = new OBJ_ShotgunBullet(gp);
             }
+
+            //Setting effects items
+
+
 
 
             //IF COLLISION IS FALSE, PLAYER CAN MOVE
@@ -634,6 +646,8 @@ public class Player extends Entity {
                         inventory.remove(itemIndex);
                     }
                 }
+
+
                 //later
 
             }

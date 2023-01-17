@@ -40,6 +40,8 @@ public class EntityGenerator {
             case OBJ_Brokenlocker.objName -> new OBJ_Brokenlocker(gp);
             case OBJ_Chair.objName -> new OBJ_Chair(gp);
             case OBJ_Table.objName -> new OBJ_Table(gp);
+            case OBJ_Amphetamine.objName -> new OBJ_Amphetamine(gp);
+            case OBJ_Booze.objName ->  new OBJ_Booze(gp);
             case OBJ_Flashlight.objName -> new OBJ_Flashlight(gp);
             case OBJ_HP.objName -> new OBJ_HP(gp);
             case OBJ_HPPack.objName -> new OBJ_HPPack(gp);

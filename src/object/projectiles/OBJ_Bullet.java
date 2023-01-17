@@ -65,6 +65,7 @@ public class OBJ_Bullet extends Projectiles {
         return color;
     }
 
+
     public int getParticleSize(){
         int size = 8;
         return size;

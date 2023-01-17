@@ -2,6 +2,8 @@ package entity;
 
 import main.GamePanel;
 
+import java.awt.*;
+
 public class Projectiles extends  Entity{
 
     Entity user;
@@ -33,6 +35,7 @@ public class Projectiles extends  Entity{
             }
             int objIndex = gp.cDetector.checkEntity(this,gp.obj);
             if(objIndex != 999){
+                Color color = new Color(63, 29, 1);
                 generateParticle(user.projectiles,user.projectiles);
                 alive = false;
             }
@@ -110,5 +113,6 @@ public class Projectiles extends  Entity{
             user.shotgunAmmo -= useCost;
         }
     }
+
 
 }
