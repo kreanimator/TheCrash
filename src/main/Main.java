@@ -39,5 +39,6 @@ public class Main {
    TODO: 11. Add interior objects.
    TODO: 12. Add and fill more levels.
    TODO: 13. Fix attack cancellation with all objects. Update: Solved 17.01.2023
+   TODO: 14. Add roof and roof disable algorithm Update: Done 22.01.2023
  */
 

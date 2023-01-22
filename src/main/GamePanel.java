@@ -7,6 +7,7 @@ import entity.Player;
 import environment.EnvironmentManager;
 import tile_interactive.InteractiveTile;
 import tiles.Map;
+import tiles.RoofManager;
 import tiles.TileManager;
 
 import javax.swing.*;
@@ -31,7 +32,9 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxWorldCol = 100;
     public final int maxWorldRow = 100;
     public final int maxMap = 10;
+    public final int maxRoofMap = 10;
     public int currentMap = 0;
+    public int currentRoofMap = 0;
     //FOR FULL SCREEN
 
     int screenWidth2 = screenWidth;
@@ -45,6 +48,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //SYSTEM
     public TileManager tileM = new TileManager(this);
+    public RoofManager roofM = new RoofManager(this);
     public KeyHandler keyH = new KeyHandler(this);
     Sound music = new Sound();
     Sound se = new Sound();
@@ -91,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //OTHERS
     public boolean bossBattleOn = false;
+    public boolean roofDrawing = true;
 
     //AREA
 
@@ -253,6 +258,8 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
 
+            tileM.update();
+
 
             //LIGHT
             eManager.update();
@@ -345,6 +352,10 @@ public class GamePanel extends JPanel implements Runnable {
             // EMPTY ENTITY LIST
             entityList.clear();
 
+            //DRAW ROOFS
+            if (roofDrawing){
+                roofM.draw(g2);
+            }
 
 
             //Environment
@@ -404,20 +415,6 @@ public class GamePanel extends JPanel implements Runnable {
         se.play();
     }
     public void changeArea(){
-
-//        if(nextArea != currentArea){
-//            stopMusic();
-//            if(nextArea == outside){
-//                playSE(0);
-//            }
-//            if(nextArea == cave){
-//                playSE(22);
-//            }
-//            if(nextArea == outside){
-//                playSE(27);
-//            }
-//        }
-
         currentArea = nextArea;
         aSetter.setEnemy();
     }

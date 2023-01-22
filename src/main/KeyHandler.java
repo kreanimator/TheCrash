@@ -76,9 +76,6 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-
-
-
     public void titleState(int key){
         if (gp.ui.titleScreenState == 0) {
             if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {

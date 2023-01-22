@@ -24,7 +24,7 @@ public class TileManager {
         tiles = new Tiles[1000];
         mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
         getTileImage();
-        loadMap("/resources/maps/world1.txt", 0);
+        loadMap("/resources/maps/world1.txt",0);
         loadMap("/resources/maps/cave.txt", 1);
         loadMap("/resources/maps/bunker1.txt", 2);
         loadMap("/resources/maps/bunker2.txt", 3);
@@ -484,5 +484,8 @@ public class TileManager {
             }
         }
         }
+
+    public void update() {
     }
+}
 
