@@ -12,11 +12,12 @@ public class OBJ_BunkerDoor extends Object {
         type = typeObstacle;
         name = objName;
         image = setup("objects/interactiveobjects/bunkerdoor", gp.tileSize, gp.tileSize);
+        image2 = setup("objects/interactiveobjects/bunkerdoor2", gp.tileSize, gp.tileSize);
         down1 = image;
         collision = true;
         this.gp = gp;
         solidArea.x = 0;
-        solidArea.y = 16;
+        solidArea.y = 0;
         solidArea.width = 48;
         solidArea.height = 48;
         solidAreaDefaultX = solidArea.x;
@@ -33,9 +34,11 @@ public class OBJ_BunkerDoor extends Object {
     public void interact() {
         if (!opened){
             startDialogue(this,0);
-//        }else {
+        }
+        else {
 //            startDialogue(this,1);
-//            //gp.playSE(2);
+//            gp.playSE(2);
+            down1 = image2;
 //
 //            opened = true;
 //            collision = false;

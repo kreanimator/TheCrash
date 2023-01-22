@@ -199,6 +199,9 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new WL_Sidewall(gp,44,58);i++;
         gp.obj[mapNum][i] = new WL_Sidewall(gp,44,59);i++;
 
+        //BUNKER DOOR
+        gp.obj[mapNum][i] = new OBJ_BunkerDoor(gp,36,8);i++;
+
 
         //BARRELS
         gp.obj[mapNum][i] = new OBJ_ToxicBarrels1(gp, 80,54);i++;

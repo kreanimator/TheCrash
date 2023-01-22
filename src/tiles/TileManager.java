@@ -358,7 +358,28 @@ public class TileManager {
         setup(324, "0325", false);
         setup(325, "0326", false);
         setup(326, "0327", false);
-        //setup(i, "0316", false);i++;
+        setup(327, "0328", false);
+        setup(328, "0329", false);
+        setup(329, "0330", false);
+        setup(330, "0331", false);
+        setup(331, "0332", true);
+        setup(332, "0333", false);
+        setup(333, "0334", true);
+        setup(334, "0335", true);
+        setup(335, "0336", true);
+        setup(336, "0337", true);
+        setup(337, "0338", true);
+        setup(338, "0339", true);
+        setup(339, "0340", true);
+        setup(340, "0341", true);
+        setup(341, "0342", true);
+        setup(342, "0343", true);
+        setup(343, "0344", true);
+        setup(344, "0345", true);
+        setup(345, "0346", true);
+        setup(346, "0347", true);
+        setup(347, "0348", false);
+
 
 
 
