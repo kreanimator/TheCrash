@@ -26,8 +26,7 @@ public class OBJ_KeyCard extends Entity {
 
         if (objectIndex != 999){
             startDialogue(this,0);
-            gp.obj[gp.currentMap][objectIndex].collision = false;
-            gp.obj[gp.currentMap][objectIndex].down1 = image2;
+            gp.obj[gp.currentMap][objectIndex] = null;
             gp.playSE(28);
             return true;
         }else {
