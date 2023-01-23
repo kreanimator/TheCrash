@@ -418,6 +418,14 @@ public class TileManager {
         setup(384, "0385", true);
         setup(385, "0386", true);
         setup(386, "0387", true);
+        setup(387, "0388", false);
+        setup(388, "0389", false);
+        setup(389, "0390", false);
+        setup(390, "0391", false);
+        setup(391, "0392", false);
+        setup(392, "0393", false);
+        setup(393, "0394", false);
+        setup(394, "0395", false);
 
 
 
