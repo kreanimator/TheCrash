@@ -77,6 +77,8 @@ public class EventHandler {
             if (hit(0,48, 16, "any")) {gp.roofDrawing = true;}
             if (hit(0,76, 15, "any")) {gp.roofDrawing = false;}
             if (hit(0,76, 16, "any")) {gp.roofDrawing = true;}
+            if (hit(0,79, 38, "any")) {gp.roofDrawing = false;}
+            if (hit(0,79, 39, "any")) {gp.roofDrawing = true;}
 
 
 
