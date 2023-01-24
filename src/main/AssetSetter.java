@@ -229,6 +229,8 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new WL_Sidewall(gp,90,33);i++;
         gp.obj[mapNum][i] = new WL_Sidewall(gp,90,35);i++;
         gp.obj[mapNum][i] = new WL_Sidewall(gp,90,37);i++;
+
+        gp.obj[mapNum][i] = new OBJ_Door3(gp,79,38); i++;
         //gp.obj[mapNum][i] = new WL_Sidewall(gp,90,37);i++;
 
 
