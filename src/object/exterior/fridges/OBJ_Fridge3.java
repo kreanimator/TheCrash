@@ -18,10 +18,10 @@ public class OBJ_Fridge3 extends Object {
 
         collision = true;
 
-        solidArea.x = 6;
-        solidArea.y = 0;
+        solidArea.x = 12;
+        solidArea.y = 24;
         solidArea.width = gp.tileSize-12;
-        solidArea.height = gp.tileSize;
+        solidArea.height = gp.tileSize-24;
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;

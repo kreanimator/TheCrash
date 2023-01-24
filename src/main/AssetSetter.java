@@ -9,6 +9,13 @@ import object.exterior.doors.*;
 import object.exterior.fences.*;
 import object.exterior.toilets.*;
 import object.exterior.fridges.*;
+import object.interior.bar.*;
+import object.interior.bath.*;
+import object.interior.beds.*;
+import object.interior.beds.matresses.*;
+import object.interior.chairs.*;
+import object.interior.closets.*;
+import object.interior.kitchen.*;
 import object.misc.*;
 import object.exterior.trash.*;
 import object.trees.*;
@@ -199,6 +206,32 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new WL_Sidewall(gp,44,58);i++;
         gp.obj[mapNum][i] = new WL_Sidewall(gp,44,59);i++;
 
+
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,44,58);i++;
+
+        gp.obj[mapNum][i] = new WL_BarnFD(gp,79,38);i++;
+        gp.obj[mapNum][i] = new WL_Barn2(gp,79,23);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,24);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,25);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,27);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,29);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,31);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,33);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,35);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,79,37);i++;
+        //gp.obj[mapNum][i] = new WL_Sidewall(gp,79,37);i++;
+
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,24);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,25);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,27);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,29);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,31);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,33);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,35);i++;
+        gp.obj[mapNum][i] = new WL_Sidewall(gp,90,37);i++;
+        //gp.obj[mapNum][i] = new WL_Sidewall(gp,90,37);i++;
+
+
         //BUNKER DOOR
         gp.obj[mapNum][i] = new OBJ_BunkerDoor(gp,36,8);i++;
 
@@ -232,6 +265,17 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Fridge4(gp,78,16);
         gp.obj[mapNum][i].setLoot(new OBJ_SweetBubaleh(gp));i++;
 
+        //BAR
+
+        gp.obj[mapNum][i] = new OBJ_BarTable1(gp,83,26);i++;
+        gp.obj[mapNum][i] = new OBJ_BarTable2(gp,84,27);i++;
+        gp.obj[mapNum][i] = new OBJ_BarTable4(gp,86,26);i++;
+
+        gp.obj[mapNum][i] = new OBJ_kFridge2(gp,81,23);
+        gp.obj[mapNum][i].setLoot(new OBJ_Amphetamine(gp));i++;
+
+
+
 
         //TRASH
 
@@ -247,6 +291,8 @@ public class AssetSetter {
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
         gp.obj[mapNum][i] = new OBJ_GarbageTrunkl(gp,16,59);
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
+
+
 
         gp.obj[mapNum][i] = new OBJ_WarningSign(gp,63,63);i++;
         gp.obj[mapNum][i] = new OBJ_Pipes(gp,16,15);i++;
@@ -300,6 +346,7 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_Vase(gp,20,84);i++;
         gp.iTile[mapNum][i] = new IT_Vase(gp,18,85);i++;
         gp.iTile[mapNum][i] = new IT_Vase(gp,20,85);i++;
+
 
 
         mapNum = 1;

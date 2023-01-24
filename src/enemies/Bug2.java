@@ -30,10 +30,8 @@ public class Bug2 extends Enemy {
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         getImage();
-
-
-
     }
+
 
     public void getImage() {
         int size = gp.tileSize - 20;

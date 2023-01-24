@@ -15,7 +15,7 @@ public class OBJ_Fenceside1 extends Object {
         speed = 0;
         direction = "down";
         type = typeObstacle;
-        lightRadius = 300;
+
         collision = true;
         getImage();
         setAction();

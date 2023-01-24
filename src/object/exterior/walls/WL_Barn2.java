@@ -30,7 +30,7 @@ public class WL_Barn2 extends Object {
 
     public void getImage() {
         int height = (gp.tileSize*2)-24 ;
-        int width = gp.tileSize * 11;
+        int width = (gp.tileSize * 11)+12;
 
         down1 = setup("tiles/wall/barn2", width, height);
 

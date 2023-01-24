@@ -1,0 +1,41 @@
+package object.interior.beds.matresses;
+
+import main.GamePanel;
+import object.Object;
+
+public class OBJ_Matress4 extends Object {
+    GamePanel gp;
+    public final static String objName = "Matress4";
+
+    public OBJ_Matress4(GamePanel gp, int col , int row) {
+        super(gp,col,row);
+        this.gp = gp;
+        name = objName;
+        speed = 0;
+        direction = "down";
+        type = typeObstacle;
+        collision = true;
+        getImage();
+
+
+        solidArea.x = 16;
+        solidArea.y = gp.tileSize;
+        solidArea.width = 30;
+        solidArea.height = gp.tileSize-12;
+
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+    }
+
+    public void getImage() {
+        int width = gp.tileSize+12;
+        int height = gp.tileSize *2;
+
+        down1 = setup("tiles/interior/beds/matress4", width, height);
+    }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
+
+}

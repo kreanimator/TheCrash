@@ -14,14 +14,15 @@ public class WL_BarnFD extends Object {
         speed = 0;
         direction = "down";
         type = typeObstacle;
-        lightRadius = 300;
+
+
         collision = true;
         getImage();
 
 
-        solidArea.x = 24;
+        solidArea.x = gp.tileSize+12;
         solidArea.y = 48;
-        solidArea.width = gp.tileSize * 10;
+        solidArea.width = (gp.tileSize * 9)+32;
         solidArea.height = 12;
 
         solidAreaDefaultX = solidArea.x;
@@ -30,7 +31,7 @@ public class WL_BarnFD extends Object {
 
     public void getImage() {
         int height = (gp.tileSize*2)-24 ;
-        int width = gp.tileSize * 11;
+        int width = (gp.tileSize * 11)+12;
 
         down1 = setup("tiles/wall/barnfd", width, height);
 

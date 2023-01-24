@@ -12,7 +12,7 @@ public class IT_BrokenVase extends InteractiveTile {
         this.worldX = gp.tileSize * col;
         this.worldY = gp.tileSize * row;
 
-        down1 = (setup("objects/interactiveobjects/brokenvase", gp.tileSize, gp.tileSize));
+        down1 = (setup("objects/interactiveobjects/brokenvase", gp.tileSize/2, gp.tileSize/2));
         solidArea.x = 0;
         solidArea.y = 0;
         solidArea.width = 0;
