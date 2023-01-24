@@ -264,16 +264,14 @@ public class AssetSetter {
         //LEVEL 3
         mapNum = 2;
         i=0;
-        gp.obj[mapNum][i] = new OBJ_IronDoor(gp,98,57);i++;
+
 
 
 
         //LEVEL 4
         mapNum = 3;
         i=0;
-        gp.obj[mapNum][i] = new OBJ_IronDoor(gp,98,48);i++;
-        gp.obj[mapNum][i] = new OBJ_Locker(gp,13,39);
-        gp.obj[mapNum][i].setLoot(new OBJ_HPPack(gp));i++;
+
 
     }
 

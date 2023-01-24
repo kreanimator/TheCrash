@@ -18,8 +18,8 @@ public class OBJ_FactoryDoor extends Object {
 
         type = typeObstacle;
         name = objName;
-        image = setup("objects/interactiveobjects/factorydoorclosed", width, height);
-        image2 = setup("objects/interactiveobjects/factorydooropened", width ,height);
+        image = setup("tiles/exterior/doors/factorydoorclosed", width, height);
+        image2 = setup("tiles/exterior/doors/factorydooropened", width ,height);
         down1 = image;
         collision = true;
         this.gp = gp;

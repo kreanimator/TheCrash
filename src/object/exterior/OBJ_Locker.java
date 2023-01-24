@@ -8,6 +8,10 @@ public class OBJ_Locker extends Object {
 
     GamePanel gp;
     public final static String objName = "Locker";
+    public OBJ_Locker(GamePanel gp) {
+        this.gp = gp;
+    }
+
 
     public OBJ_Locker(GamePanel gp, int col , int row) {
         super(gp,col,row);
@@ -16,8 +20,8 @@ public class OBJ_Locker extends Object {
         name = objName;
         int height = gp.tileSize*2;
         int width = gp.tileSize+12;
-        image = setup("objects/interactiveobjects/locker", width, height);
-        image2 = setup("objects/interactiveobjects/lockeropened", width, height);
+        image = setup("tiles/interior/lockers/locker", width, height);
+        image2 = setup("tiles/interior/lockers/lockeropened", width, height);
         down1 = image;
         collision = true;
         solidArea.x = 18;

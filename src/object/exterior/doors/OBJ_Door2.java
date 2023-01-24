@@ -16,7 +16,7 @@ public class OBJ_Door2 extends Object {
 
         type = typeObstacle;
         name = objName;
-        image = setup("objects/interactiveobjects/doorclosed2", width, height);
+        image = setup("tiles/exterior/doors/doorclosed2", width, height);
         image2 = null;
 //        image2 = setup("objects/interactiveobjects/dooropened2", width, height);
         down1 = image;

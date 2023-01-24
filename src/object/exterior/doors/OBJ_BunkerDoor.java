@@ -11,8 +11,8 @@ public class OBJ_BunkerDoor extends Object {
         super(gp,col,row);
         type = typeObstacle;
         name = objName;
-        image = setup("objects/interactiveobjects/bunkerdoor", gp.tileSize, gp.tileSize);
-        image2 = setup("objects/interactiveobjects/bunkerdoor2", gp.tileSize, gp.tileSize);
+        image = setup("tiles/exterior/doors/bunkerdoor", gp.tileSize, gp.tileSize);
+        image2 = setup("tiles/exterior/doors/bunkerdoor2", gp.tileSize, gp.tileSize);
         down1 = image;
         collision = true;
         this.gp = gp;
