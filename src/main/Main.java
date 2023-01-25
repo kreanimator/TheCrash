@@ -35,7 +35,7 @@ public class Main {
    TODO: 8. Develop addiction mechanics. DONE 17.01.2023
    TODO: 9. Fix position of light circle while player is near to the edge of the map.
    TODO: 10. Develop multiple lighting system.
-   TODO: 11. Add interior objects.
+   TODO: 11. Add interior objects. DONE 25.01.2023
    TODO: 12. Add and fill more levels.
    TODO: 13. Fix attack cancellation with all objects. Update: Solved 17.01.2023
    TODO: 14. Add roof and roof disable algorithm Update: Done 22.01.2023

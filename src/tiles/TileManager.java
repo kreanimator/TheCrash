@@ -428,6 +428,58 @@ public class TileManager {
         setup(392, "0393", false);
         setup(393, "0394", false);
         setup(394, "0395", false);
+        setup(395, "0396", true);
+        setup(396, "0397", true);
+        setup(397, "0398", true);
+        setup(398, "0399", true);
+        setup(399, "0400", true);
+        setup(400, "0401", true);
+        setup(401, "0402", true);
+        setup(402, "0403", true);
+        setup(403, "0404", true);
+        setup(404, "0405", true);
+        setup(405, "0406", true);
+        setup(406, "0407", true);
+        setup(407, "0408", true);
+        setup(408, "0409", true);
+        setup(409, "0410", true);
+        setup(410, "0411", true);
+        setup(411, "0412", true);
+        setup(412, "0413", true);
+        setup(413, "0414", true);
+        setup(414, "0415", true);
+        setup(415, "0416", true);
+        setup(416, "0417", true);
+        setup(417, "0418", true);
+        setup(418, "0419", true);
+        setup(419, "0420", true);
+        setup(420, "0421", true);
+        setup(421, "0422", true);
+        setup(422, "0423", true);
+        setup(423, "0424", true);
+        setup(424, "0425", true);
+        setup(425, "0426", true);
+        setup(426, "0427", true);
+        setup(427, "0428", true);
+        setup(428, "0429", true);
+        setup(429, "0430", true);
+        setup(430, "0431", true);
+        setup(431, "0432", true);
+        setup(432, "0433", true);
+        setup(433, "0434", true);
+        setup(434, "0435", true);
+        setup(435, "0436", true);
+        setup(436, "0437", true);
+        setup(437, "0438", true);
+        setup(438, "0439", true);
+        setup(439, "0440", true);
+        setup(440, "0441", true);
+        setup(441, "0442", false);
+        setup(442, "0443", false);
+        setup(443, "0444", false);
+        setup(444, "0445", false);
+        setup(445, "0446", false);
+
 
 
 
