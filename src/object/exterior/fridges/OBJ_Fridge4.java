@@ -54,8 +54,9 @@ public class OBJ_Fridge4 extends Object {
             } else {
 
                 opened = true;
+                startDialogue(this,0);
             }
-            startDialogue(this,0);
+
         } else {
             startDialogue(this,2);
         }

@@ -19,7 +19,7 @@ public class OBJ_Chair3 extends Object {
 
 
         solidArea.x = 2;
-        solidArea.y = 14;
+        solidArea.y = 36;
         solidArea.width = 14;
         solidArea.height = 10;
 
@@ -29,7 +29,7 @@ public class OBJ_Chair3 extends Object {
 
     public void getImage() {
         int width = 18;
-        int height = gp.tileSize-12;
+        int height = gp.tileSize;
 
         down1 = setup("tiles/interior/chairs/chair3", width, height);
     }

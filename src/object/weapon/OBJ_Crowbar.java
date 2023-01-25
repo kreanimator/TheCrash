@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class OBJ_Crowbar extends Entity {
 
-    public final static String objName = "Wrench";
+    public final static String objName = "Crowbar";
     public OBJ_Crowbar(GamePanel gp) {
         super(gp);
         type = typeCrowbar;
@@ -17,11 +17,11 @@ public class OBJ_Crowbar extends Entity {
         attackValue = 6;
         knockBackPower = 10;
         description = "[" + name + "]\nAttack value: " + attackValue + "\nOld rusty crowbar.\n Dangerous as a weapon.\n Can brake some objects.";
-        attackArea.width = 36;
-        attackArea.height = 36;
+        attackArea.width = 12;
+        attackArea.height = 24;
         motion1Duration = 10;
         motion2Duration = 20;
-        motion3Duration = 40;
+        motion3Duration = 30;
     }
     public Color getParticleColor(){
         Color color = new Color(220, 1, 44);

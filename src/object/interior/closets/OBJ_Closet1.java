@@ -49,8 +49,9 @@ public class OBJ_Closet1 extends Object {
             } else {
                 down1 = image2;
                 opened = true;
+                startDialogue(this,0);
             }
-            startDialogue(this,0);
+
         } else {
             startDialogue(this,2);
         }
