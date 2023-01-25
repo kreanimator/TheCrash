@@ -10,12 +10,10 @@ import object.exterior.fences.*;
 import object.exterior.toilets.*;
 import object.exterior.fridges.*;
 import object.interior.bar.*;
-import object.interior.bath.*;
-import object.interior.beds.*;
-import object.interior.beds.matresses.*;
-import object.interior.chairs.*;
-import object.interior.closets.*;
 import object.interior.kitchen.*;
+import object.interior.lockers.*;
+import object.interior.shelves.*;
+import object.interior.tables.*;
 import object.misc.*;
 import object.exterior.trash.*;
 import object.trees.*;
@@ -273,8 +271,24 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_BarTable2(gp,84,27);i++;
         gp.obj[mapNum][i] = new OBJ_BarTable4(gp,86,26);i++;
 
-        gp.obj[mapNum][i] = new OBJ_kFridge2(gp,81,23);
-        gp.obj[mapNum][i].setLoot(new OBJ_Amphetamine(gp));i++;
+        gp.obj[mapNum][i] = new OBJ_Table6(gp,81,26);i++;
+
+        gp.obj[mapNum][i] = new OBJ_Shelf1(gp,83,23);i++;
+        gp.obj[mapNum][i] = new OBJ_Shelf1(gp,84,23);i++;
+        gp.obj[mapNum][i] = new OBJ_Shelf1(gp,85,23);i++;
+        gp.obj[mapNum][i] = new OBJ_Shelf3(gp,86,23);i++;
+
+        gp.obj[mapNum][i] = new OBJ_Table1(gp,87,29);i++;
+        gp.obj[mapNum][i] = new OBJ_Table1(gp,84,29);i++;
+        gp.obj[mapNum][i] = new OBJ_Table2(gp,81,29);i++;
+        gp.obj[mapNum][i] = new OBJ_Table3(gp,87,32);i++;
+        gp.obj[mapNum][i] = new OBJ_Table4(gp,84,32);i++;
+        gp.obj[mapNum][i] = new OBJ_Table3(gp,81,32);i++;
+        gp.obj[mapNum][i] = new OBJ_Table1(gp,87,35);i++;
+        gp.obj[mapNum][i] = new OBJ_Table2(gp,84,35);i++;
+        gp.obj[mapNum][i] = new OBJ_Table4(gp,81,35);i++;
+
+
 
 
 
@@ -298,7 +312,7 @@ public class AssetSetter {
 
         gp.obj[mapNum][i] = new OBJ_WarningSign(gp,63,63);i++;
         gp.obj[mapNum][i] = new OBJ_Pipes(gp,16,15);i++;
-        gp.obj[mapNum][i] = new OBJ_Locker(gp,34,81);
+        gp.obj[mapNum][i] = new OBJ_Locker1(gp,34,81);
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
 
 

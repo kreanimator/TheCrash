@@ -5,13 +5,8 @@ import object.armor.OBJ_Armor_Learther;
 import object.armor.OBJ_Armor_Metal;
 import object.armor.OBJ_BarrelShield;
 import object.armor.OBJ_Shield;
-import object.exterior.OBJ_Locker;
-import object.exterior.doors.OBJ_Door;
-import object.interior.*;
+import object.interior.lockers.OBJ_Locker1;
 import object.misc.*;
-import object.projectiles.OBJ_Acid;
-import object.projectiles.OBJ_Bullet;
-import object.projectiles.OBJ_ShotgunBullet;
 import object.weapon.*;
 
 public class EntityGenerator {
@@ -33,7 +28,7 @@ public class EntityGenerator {
 //            case OBJ_Door.objName-> new OBJ_Door();
             // case OBJ_GarbageTrunk.objName -> new OBJ_GarbageTrunk(gp);
             //case OBJ_IronDoor.objName -> new OBJ_IronDoor(gp);
-            case OBJ_Locker.objName -> new OBJ_Locker(gp);
+            case OBJ_Locker1.objName -> new OBJ_Locker1(gp);
 //            case OBJ_Bed.objName -> new OBJ_Bed(gp);
 //            case OBJ_Bookshelf.objName -> new OBJ_Bookshelf(gp);
 //            case OBJ_Bookshelf2.objName -> new OBJ_Bookshelf2(gp);

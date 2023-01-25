@@ -1,33 +1,28 @@
-package object.exterior;
+package object.interior.lockers;
 
 import entity.Entity;
 import main.GamePanel;
 import object.Object;
 
-public class OBJ_Locker extends Object {
-
+public class OBJ_Safe2 extends Object {
     GamePanel gp;
-    public final static String objName = "Locker";
-    public OBJ_Locker(GamePanel gp) {
-        this.gp = gp;
-    }
+    public final static String objName = "Safe2";
 
-
-    public OBJ_Locker(GamePanel gp, int col , int row) {
+    public OBJ_Safe2(GamePanel gp, int col , int row) {
         super(gp,col,row);
         this.gp = gp;
         type = typeObstacle;
         name = objName;
         int height = gp.tileSize*2;
-        int width = gp.tileSize+12;
-        image = setup("tiles/interior/lockers/locker", width, height);
-        image2 = setup("tiles/interior/lockers/lockeropened", width, height);
+        int width = gp.tileSize+8;
+        image = setup("tiles/interior/lockers/safe2", width, height);
+        image2 = setup("tiles/interior/lockers/safe2opened", width, height);
         down1 = image;
         collision = true;
-        solidArea.x = 18;
-        solidArea.y = 48;
-        solidArea.width = 24;
-        solidArea.height = 36;
+        solidArea.x = 22;
+        solidArea.y = 60;
+        solidArea.width = 14;
+        solidArea.height = 24;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
@@ -38,7 +33,7 @@ public class OBJ_Locker extends Object {
         setDialogue();
     }
     public void setDialogue(){
-        dialogues[0][0] = "You opened a locker and find a " + loot.name +" !";
+        dialogues[0][0] = "You opened a safe and find a " + loot.name +" !";
         dialogues[1][0] = "You cannot carry anymore";
         dialogues[2][0] = "It's empty! ";
 
@@ -48,7 +43,7 @@ public class OBJ_Locker extends Object {
             gp.playSE(6);
 
             if (!gp.player.canObtainItem(loot)) {
-            startDialogue(this,1);
+                startDialogue(this,1);
             } else {
                 down1 = image2;
                 opened = true;
