@@ -24,8 +24,7 @@ import object.misc.*;
 import object.exterior.trash.*;
 import object.trees.*;
 import object.exterior.walls.*;
-import object.weapon.OBJ_Ammo_Pistol;
-import object.weapon.OBJ_Crowbar;
+import object.weapon.*;
 import tile_interactive.*;
 
 
@@ -368,7 +367,10 @@ public class AssetSetter {
 
 
         //BUNKER DOOR
-        gp.obj[mapNum][i] = new OBJ_BunkerDoor(gp,36,8);i++;
+        gp.obj[mapNum][i] = new OBJ_BunkerDoor(gp,36,8);
+//        gp.obj[mapNum][i].worldX = gp.tileSize * 36;
+//        gp.obj[mapNum][i].worldY = gp.tileSize * 8;
+        i++;
 
 
         //BARRELS
@@ -427,7 +429,7 @@ public class AssetSetter {
         //LEVEL 2
         mapNum =1;
         i=0;
-        gp.obj[mapNum][i] = new OBJ_IronDoor(gp,89,48);i++;
+
 
 
 
@@ -463,13 +465,34 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_Box(gp,52,12);i++;
         gp.iTile[mapNum][i] = new IT_Box(gp,52,13);i++;
         gp.iTile[mapNum][i] = new IT_Box(gp,52,14);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,19,83);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,18,83);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,20,83);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,18,84);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,19,83);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,18,83);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,20,83);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,18,84);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,20,84);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,18,85);i++;
+//        gp.iTile[mapNum][i] = new IT_Vase(gp,20,85);i++;
+
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,83);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,84);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,85);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,86);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,16,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,17,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,18,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,19,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,87);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,86);i++;
+
         gp.iTile[mapNum][i] = new IT_Vase(gp,20,84);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,18,85);i++;
-        gp.iTile[mapNum][i] = new IT_Vase(gp,20,85);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,83);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,20,82);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,19,82);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,18,82);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,17,82);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,16,82);i++;
+        gp.iTile[mapNum][i] = new IT_Vase(gp,15,82);i++;
 
 
 
@@ -485,10 +508,12 @@ public class AssetSetter {
     public void setNPC() {
         int mapNum = 0;
         int i =0;
-        gp.npc[mapNum][i] = new NPC_Nick(gp,37,83);i++;
+        gp.npc[mapNum][i] = new NPC_Nick(gp,17,83);i++;
 
         //TREES
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,17,70);i++;
+        gp.npc[mapNum][i] = new OBJ_Tree1(gp,20,83);i++;
+        gp.npc[mapNum][i] = new OBJ_Tree1(gp,21,84);i++;
         //LIGHT
         gp.npc[mapNum][i] = new OBJ_CampFire(gp,31,79);i++;
         gp.npc[mapNum][i] = new OBJ_Trashbin(gp,80,19);i++;
@@ -497,7 +522,7 @@ public class AssetSetter {
 
         mapNum = 1;
         i=0;
-        gp.npc[mapNum][i] = new NPC_Ghoul(gp,14,41);
+//        gp.npc[mapNum][i] = new NPC_Ghoul(gp,14,41);
 
         mapNum = 3;
         i=0;
@@ -536,11 +561,11 @@ public class AssetSetter {
 
         mapNum =1;
         i=0;
-        gp.enemy[mapNum][i] = new Spider(gp,35,79);i++;
-
-        gp.enemy[mapNum][i] = new Bug1(gp,10,14);i++;
-        gp.enemy[mapNum][i] = new Bug2(gp,13,14);i++;
-        gp.enemy[mapNum][i] = new Bug3(gp,15,14);
+//        gp.enemy[mapNum][i] = new Spider(gp,35,79);i++;
+//
+//        gp.enemy[mapNum][i] = new Bug1(gp,10,14);i++;
+//        gp.enemy[mapNum][i] = new Bug2(gp,13,14);i++;
+//        gp.enemy[mapNum][i] = new Bug3(gp,15,14);
 
         mapNum =3;
         i=0;

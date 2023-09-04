@@ -28,6 +28,11 @@ public class OBJ_Locker3 extends Object {
 
     }
 
+
+    public OBJ_Locker3() {
+
+    }
+
     public void setLoot(Entity loot) {
         this.loot = loot;
         setDialogue();

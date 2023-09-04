@@ -25,8 +25,9 @@ public class TileManager {
         mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
         getTileImage();
         loadMap("/resources/maps/world1.txt",0);
-        loadMap("/resources/maps/cave.txt", 1);
-        loadMap("/resources/maps/bunker1.txt", 2);
+        loadMap("/resources/maps/factorybasement.txt", 1);
+        loadMap("/resources/maps/cave.txt", 2);
+
         loadMap("/resources/maps/bunker2.txt", 3);
     }
 
@@ -479,13 +480,6 @@ public class TileManager {
         setup(443, "0444", false);
         setup(444, "0445", false);
         setup(445, "0446", false);
-
-
-
-
-
-
-
 
     }
 

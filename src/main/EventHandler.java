@@ -79,11 +79,10 @@ public class EventHandler {
             if (hit(0,76, 16, "any")) {gp.roofDrawing = true;}
             if (hit(0,79, 38, "any")) {gp.roofDrawing = false;}
             if (hit(0,79, 39, "any")) {gp.roofDrawing = true;}
+            if (hit(0,22, 40, "left")) {transition(1,34,31,gp.bunker);gp.stopMusic();gp.playMusic(27);}
+            if (hit(1,34, 31, "left")) {transition(0,22,40,gp.outside);gp.stopMusic();gp.playMusic(0);}
 
-
-
-
-             if (hit(0,36, 8, "any")) {transition(1,39,89,gp.cave);gp.stopMusic();gp.playMusic(22);}
+            if (hit(0,36, 8, "any")) {transition(2,39,89,gp.cave);gp.stopMusic();gp.playMusic(22);}
 
             else if (hit(1, 39, 89, "any")) {transition(0,36,8,gp.outside);gp.stopMusic();gp.playMusic(0);}
             else if (hit(1, 91, 48, "any")) {transition(2,1,46,gp.bunker);gp.stopMusic();gp.playMusic(27);}

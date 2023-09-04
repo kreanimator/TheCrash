@@ -9,6 +9,7 @@ public class OBJ_BunkerDoor extends Object {
     public final static String objName ="Bunker Door";
     public OBJ_BunkerDoor(GamePanel gp, int col, int row) {
         super(gp,col,row);
+
         type = typeObstacle;
         name = objName;
         image = setup("tiles/exterior/doors/bunkerdoor", gp.tileSize, gp.tileSize);
@@ -25,6 +26,12 @@ public class OBJ_BunkerDoor extends Object {
         setDialog();
 
     }
+
+    public OBJ_BunkerDoor() {
+
+    }
+
+
     public void setDialog(){
         dialogues[0][0] = "You need a key card to open it!";
         dialogues[1][0] = "You've opened an old bunker!";

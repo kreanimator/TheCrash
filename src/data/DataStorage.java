@@ -1,6 +1,7 @@
 package data;
 
 import entity.Entity;
+import object.Object;
 
 import java.io.Serializable;
 import java.util.ArrayList;

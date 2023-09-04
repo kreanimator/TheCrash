@@ -25,6 +25,7 @@ public class RoofManager {
         getRoofImage();
         loadRoofMap("/resources/maps/roofmaps/world1.txt", 0);
 
+
     }
 
     public void getRoofImage() {

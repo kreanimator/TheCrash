@@ -8,9 +8,6 @@ public class OBJ_Locker1 extends Object {
 
     GamePanel gp;
     public final static String objName = "Locker";
-    public OBJ_Locker1(GamePanel gp) {
-        this.gp = gp;
-    }
 
 
     public OBJ_Locker1(GamePanel gp, int col , int row) {
@@ -30,6 +27,10 @@ public class OBJ_Locker1 extends Object {
         solidArea.height = 24;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
+
+    }
+
+    public OBJ_Locker1() {
 
     }
 
