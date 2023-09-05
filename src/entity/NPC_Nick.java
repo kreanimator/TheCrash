@@ -48,10 +48,10 @@ public class NPC_Nick extends NPC{
 
     public void setAction() {
         if (onPath) {
-            int goalCol = 30;
-            int goalRow = 71;
-//            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
-//            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
+//            int goalCol = 30;
+//            int goalRow = 71;
+            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
+            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
             searchPath(goalCol, goalRow);
             finishedPath = true;
             speed = 1;

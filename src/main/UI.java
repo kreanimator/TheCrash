@@ -127,7 +127,7 @@ public class UI {
         }
         //QUEST STATE
         if (gp.gameState == gp.questState) {
-            drawQuestScreen();
+            drawQuestScreen(gp.player, true);
         }
     }
 
@@ -251,6 +251,11 @@ public class UI {
 
         return itemIndex;
 
+    }
+    public int getQuestIndex(int slotCol, int slotRow) {
+        int questIndex = slotCol + (slotRow * 5);
+
+        return questIndex;
 
     }
 
@@ -737,28 +742,115 @@ public class UI {
         }
         gp.keyH.ePressed = false;
     }
-    private void drawQuestScreen() {
-        g2.setColor(Color.WHITE);
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20f));
+    private void drawQuestScreen(Entity entity, boolean cursor) {
+        int frameX = 0;
+        int frameY = 0;
+        int frameWidth = 0;
+        int frameHeight = 0;
+        int slotCol = 0;
+        int slotRow = 0;
+        //FRAME
+        if (entity == gp.player) {
+            frameX = gp.tileSize * 3;
+            frameY = gp.tileSize * 2;
+            frameWidth = gp.tileSize * 8;
+            frameHeight = gp.tileSize * 8;
+            slotCol = playerSlotCol;
+            slotRow = playerSlotRow;
 
-        //SUB WINDOW
-        int frameX = gp.tileSize * 6;
-        int frameY = gp.tileSize;
-        int frameWidth = gp.tileSize * 8;
-        int frameHeight = gp.tileSize * 10;
-        int x = gp.tileSize * 2;
-        int y = gp.tileSize / 2;
-
-        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10f));
-
-        currentQuest = npc.quests[npc.questIndex];
-
-        if(npc.quests[npc.questIndex] != null){
-            g2.drawString(currentQuest, x, y);
-            y += 40;
+        } else {
+            frameX = gp.tileSize * 2;
+            frameY = gp.tileSize;
+            frameWidth = gp.tileSize * 6;
+            frameHeight = gp.tileSize * 5;
+            slotCol = slotNpcCol;
+            slotRow = slotNpcRow;
         }
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        //SLOT
+
+        final int slotXstart = frameX + 20;
+        final int slotYstart = frameY + 20;
+        int slotX = slotXstart;
+        int slotY = slotYstart;
+        int slotSize = gp.tileSize + 3;
+
+        //DRAW PLAYERS QUESTS
+
+        for (int i = 0; i < entity.quest.size(); i++) {
+
+            slotX += slotSize;
+
+            if (i == 4 || i == 9 || i == 14) {
+                slotX = slotXstart;
+                slotY += slotSize;
+            }
+        }
+
+        //CURSOR
+        if (cursor) {
+            int cursorX = slotXstart + (slotSize * slotCol);
+            int cursorY = slotYstart + (slotSize * slotRow);
+            int cursorWidth = frameWidth - 40;
+            int cursorHeight = gp.tileSize;
+
+            //DRAWCURSOR
+            g2.setColor(Color.WHITE);
+            g2.setStroke(new BasicStroke(3));
+            g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+
+            //DESCRIPTION FRAME
+
+            int dFramex = frameX + frameWidth;
+            int dFrameY = frameY;
+            int dFrameWidth = frameWidth;
+            int dFrameHeight = gp.tileSize * 8;
+
+
+            //DRAW DESCRIPTION TEXT
+
+            int textX = dFramex + 20;
+            int textY = dFrameY + gp.tileSize;
+            g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10f));
+
+            int questIndex = getQuestIndex(slotCol, slotRow);
+
+            if (questIndex < entity.quest.size()) {
+                drawSubWindow(dFramex, dFrameY, dFrameWidth, dFrameHeight);
+                for (String line : entity.quest.get(questIndex).description.split("\n")) {
+
+                    g2.drawString(line, textX, textY);
+                    textY += 32;
+                }
+
+            }
+        }
+
+
     }
+//    private void drawQuestScreen() {
+//        g2.setColor(Color.WHITE);
+//        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20f));
+//
+//        //SUB WINDOW
+//        int frameX = gp.tileSize * 6;
+//        int frameY = gp.tileSize;
+//        int frameWidth = gp.tileSize * 8;
+//        int frameHeight = gp.tileSize * 10;
+//        int x = frameX + gp.tileSize * 2;
+//        int y = frameY + gp.tileSize / 2;
+//
+//        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+//        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10f));
+//
+//        currentQuest = npc.quests[npc.questIndex];
+//
+//        if(npc.quests[npc.questIndex] != null){
+//            g2.drawString(currentQuest, x, y);
+//            y += 40;
+//        }
+//    }
 
 
 

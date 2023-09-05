@@ -536,26 +536,26 @@ public class AssetSetter {
         int mapNum = 0;
         int i = 0;
 
-//        gp.enemy[mapNum][i] = new Bug1(gp,34,82);i++;
-//        gp.enemy[mapNum][i] = new GreenSlime(gp,77,82);i++;
-//        gp.enemy[mapNum][i] = new GreenSlime(gp,78,85);i++;
-//        gp.enemy[mapNum][i] = new GreenSlime(gp,75,83);i++;
-//        gp.enemy[mapNum][i] = new GreenSlime(gp,74,83);i++;
-//
-//        gp.enemy[mapNum][i] = new Punk(gp,49,13);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,50,13);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,63,13);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,46,28);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,47,28);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,60,13);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,30,18);i++;
-//        gp.enemy[mapNum][i] = new Punk(gp,30,19);i++;
-//        gp.enemy[mapNum][i] = new Ghoul(gp,75,46);i++;
-//        gp.enemy[mapNum][i] = new Ghoul(gp,69,40);i++;
-//        gp.enemy[mapNum][i] = new Ghoul(gp,78,50);i++;
-//        gp.enemy[mapNum][i] = new Ghoul(gp,69,50);i++;
-//        gp.enemy[mapNum][i] = new Ghoul(gp,70,43);i++;
-//        gp.enemy[mapNum][i] = new DeathClaw(gp,29,48);
+        gp.enemy[mapNum][i] = new Bug1(gp,34,82);i++;
+        gp.enemy[mapNum][i] = new GreenSlime(gp,77,82);i++;
+        gp.enemy[mapNum][i] = new GreenSlime(gp,78,85);i++;
+        gp.enemy[mapNum][i] = new GreenSlime(gp,75,83);i++;
+        gp.enemy[mapNum][i] = new GreenSlime(gp,74,83);i++;
+
+        gp.enemy[mapNum][i] = new Punk(gp,49,13);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,50,13);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,63,13);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,46,28);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,47,28);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,60,13);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,30,18);i++;
+        gp.enemy[mapNum][i] = new Punk(gp,30,19);i++;
+        gp.enemy[mapNum][i] = new Ghoul(gp,75,46);i++;
+        gp.enemy[mapNum][i] = new Ghoul(gp,69,40);i++;
+        gp.enemy[mapNum][i] = new Ghoul(gp,78,50);i++;
+        gp.enemy[mapNum][i] = new Ghoul(gp,69,50);i++;
+        gp.enemy[mapNum][i] = new Ghoul(gp,70,43);i++;
+        gp.enemy[mapNum][i] = new DeathClaw(gp,29,48);
 
         //LEVEL2
 
