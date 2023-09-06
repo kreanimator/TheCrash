@@ -749,6 +749,8 @@ public class UI {
         int frameHeight = 0;
         int slotCol = 0;
         int slotRow = 0;
+
+
         //FRAME
         if (entity == gp.player) {
             frameX = gp.tileSize * 3;
@@ -768,17 +770,27 @@ public class UI {
         }
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
 
+        g2.setColor(Color.WHITE);
+        g2.setFont(g2.getFont().deriveFont(20f));
+        int headerX = frameX + gp.tileSize * 2;
+        int headerY = frameY + gp.tileSize;
+        final int lineHeight = 38;
+
+        //NAMES
+
+        g2.drawString("QUESTBOOK", headerX, headerY);
+
         //SLOT
 
         final int slotXstart = frameX + 20;
-        final int slotYstart = frameY + 20;
+        final int slotYstart = frameY + gp.tileSize * 2;
         int slotX = slotXstart;
         int slotY = slotYstart;
         int slotSize = gp.tileSize + 3;
 
         //DRAW PLAYERS QUESTS
 
-        for (int i = 0; i < entity.quest.size(); i++) {
+        for (int i = 0; i < Entity.quest.size(); i++) {
 
             slotX += slotSize;
 
@@ -799,28 +811,33 @@ public class UI {
             g2.setColor(Color.WHITE);
             g2.setStroke(new BasicStroke(3));
             g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+            for (int i = 0; i < Entity.quest.size(); i++) {
+                g2.drawString(Entity.quest.get(i).name,slotX, slotY+30);
+            }
 
             //DESCRIPTION FRAME
 
             int dFramex = frameX + frameWidth;
-            int dFrameY = frameY;
-            int dFrameWidth = frameWidth;
             int dFrameHeight = gp.tileSize * 8;
 
 
             //DRAW DESCRIPTION TEXT
 
             int textX = dFramex + 20;
-            int textY = dFrameY + gp.tileSize;
+            int textY = frameY + gp.tileSize;
             g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10f));
 
             int questIndex = getQuestIndex(slotCol, slotRow);
 
-            if (questIndex < entity.quest.size()) {
-                drawSubWindow(dFramex, dFrameY, dFrameWidth, dFrameHeight);
-                for (String line : entity.quest.get(questIndex).description.split("\n")) {
+            if (questIndex < Entity.quest.size()) {
+                drawSubWindow(dFramex, frameY, frameWidth, dFrameHeight);
+                for (int i = 0; i < Entity.quest.size(); i++) {
+                    g2.drawImage(Entity.quest.get(i).down1,textX,frameY+gp.tileSize/2,gp.tileSize,gp.tileSize,null);
+                }
+                for (String line : Entity.quest.get(questIndex).description.split("\n")) {
 
-                    g2.drawString(line, textX, textY);
+
+                    g2.drawString(line, textX+gp.tileSize, textY);
                     textY += 32;
                 }
 

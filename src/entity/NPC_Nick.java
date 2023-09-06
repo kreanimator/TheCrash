@@ -1,6 +1,7 @@
 package entity;
 
 import main.GamePanel;
+import object.quests.Q_KillBugs;
 
 import java.util.Random;
 
@@ -8,6 +9,7 @@ public class NPC_Nick extends NPC{
     boolean questStarted = false;
     boolean finishedPath = true;
     boolean questCompleted = false;
+
 
     String questText = "";
     public static final String npcName = "Nick";
@@ -44,6 +46,10 @@ public class NPC_Nick extends NPC{
         right1 = setup("npc/nick/right1", gp.tileSize, gp.tileSize);
         right2 = setup("npc/nick/right2", gp.tileSize, gp.tileSize);
         right3 = setup("npc/nick/right3", gp.tileSize, gp.tileSize);
+    }
+    public void setQuest(){
+        Player.quest.clear();
+        Player.quest.add(new Q_KillBugs(gp));
     }
 
     public void setAction() {
@@ -88,22 +94,21 @@ public class NPC_Nick extends NPC{
         dialogues[1][0] = " There are a lot of bugs on the field near my house, please make them disappear...";
 
     }
-    public void setQuest(){
-        quests[questIndex] = "Kill bugs.";
-    }
+
 
 
     public void speak() {
         npcReactionToAction();
         startDialogue(this, dialogueSet);
         dialogueSet++;
+        setQuest();
+
+
 
         if(dialogues[dialogueSet][0] == null){
 //            dialogueSet = 0;
             dialogueSet--;
-            setQuest();
             questStarted = true;
-            questIndex++;
         }
 //        onPath = true;
     }

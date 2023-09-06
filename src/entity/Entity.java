@@ -99,7 +99,7 @@ public class Entity {
 
     //ITEM ATTRIBUTES
     public ArrayList<Entity> inventory = new ArrayList<>();
-    public ArrayList<Entity> quest = new ArrayList<>();
+    public static ArrayList<Entity> quest = new ArrayList<>();
     public final int maxInventorySize = 20;
     public int attackValue;
     public int defenseValue;

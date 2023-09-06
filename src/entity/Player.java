@@ -7,6 +7,7 @@ import object.armor.OBJ_Shield;
 import object.misc.*;
 import object.projectiles.OBJ_Bullet;
 import object.projectiles.OBJ_ShotgunBullet;
+import object.quests.Q_KillBugs;
 import object.weapon.OBJ_Ammo_Shotgun;
 import object.weapon.OBJ_Melee_Bat_normal;
 import object.weapon.OBJ_Shotgun;
@@ -127,8 +128,11 @@ public class Player extends Entity {
         inventory.add(new OBJ_Booze(gp));
         inventory.add(new OBJ_HPPack(gp));
 
-    }
 
+    }
+    public void setQuest(){
+
+    }
     public void setDefaultPositions() {
 
         //gp.currentMap = 3;
