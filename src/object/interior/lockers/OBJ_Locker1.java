@@ -13,6 +13,8 @@ public class OBJ_Locker1 extends Object {
     public OBJ_Locker1(GamePanel gp, int col , int row) {
         super(gp,col,row);
         this.gp = gp;
+        this.worldX = gp.tileSize * col;
+        this.worldY = gp.tileSize * row;
         type = typeObstacle;
         name = objName;
         int height = gp.tileSize*2;

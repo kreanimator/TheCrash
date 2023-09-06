@@ -74,9 +74,9 @@ public class CollisionDetector {
             direction = entity.knockbackDirection;
         }
 
-        for (int i =0; i < gp.obj[1].length; i++){
+        for (int i =0; i < gp.obj[1].length; i++) {
 
-            if (gp.obj[gp.currentMap][i] != null){
+            if (gp.obj[gp.currentMap][i] != null) {
                 // Get entity's solid area position
                 entity.solidArea.x = entity.worldX + entity.solidArea.x;
                 entity.solidArea.y = entity.worldY + entity.solidArea.y;
@@ -89,10 +89,10 @@ public class CollisionDetector {
                     case "up" -> {
                         entity.solidArea.y -= entity.speed;
                         if (entity.solidArea.intersects(gp.obj[gp.currentMap][i].solidArea)) {
-                            if (gp.obj[gp.currentMap][i].collision){
+                            if (gp.obj[gp.currentMap][i].collision) {
                                 entity.collisionOn = true;
                             }
-                            if (player){
+                            if (player) {
                                 index = i;
                             }
                         }
@@ -100,10 +100,10 @@ public class CollisionDetector {
                     case "down" -> {
                         entity.solidArea.y += entity.speed;
                         if (entity.solidArea.intersects(gp.obj[gp.currentMap][i].solidArea)) {
-                            if (gp.obj[gp.currentMap][i].collision){
+                            if (gp.obj[gp.currentMap][i].collision) {
                                 entity.collisionOn = true;
                             }
-                            if (player){
+                            if (player) {
                                 index = i;
                             }
                         }
@@ -111,10 +111,10 @@ public class CollisionDetector {
                     case "left" -> {
                         entity.solidArea.x -= entity.speed;
                         if (entity.solidArea.intersects(gp.obj[gp.currentMap][i].solidArea)) {
-                            if (gp.obj[gp.currentMap][i].collision){
+                            if (gp.obj[gp.currentMap][i].collision) {
                                 entity.collisionOn = true;
                             }
-                            if (player){
+                            if (player) {
                                 index = i;
                             }
                         }
@@ -122,10 +122,10 @@ public class CollisionDetector {
                     case "right" -> {
                         entity.solidArea.x += entity.speed;
                         if (entity.solidArea.intersects(gp.obj[gp.currentMap][i].solidArea)) {
-                            if (gp.obj[gp.currentMap][i].collision){
+                            if (gp.obj[gp.currentMap][i].collision) {
                                 entity.collisionOn = true;
                             }
-                            if (player){
+                            if (player) {
                                 index = i;
                             }
                         }
@@ -138,7 +138,6 @@ public class CollisionDetector {
                 gp.obj[gp.currentMap][i].solidArea.x = gp.obj[gp.currentMap][i].solidAreaDefaultX;
                 gp.obj[gp.currentMap][i].solidArea.y = gp.obj[gp.currentMap][i].solidAreaDefaultY;
             }
-
 
         }
         return index;

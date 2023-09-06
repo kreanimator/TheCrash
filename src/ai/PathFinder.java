@@ -81,15 +81,18 @@ public class PathFinder {
             if (gp.tileM.tiles[tileNum].collision) {
                 node[col][row].solid = true;
             }
+
 //
             //CHECK OBJECTS
-            for (int i = 0; i < gp.obj[1].length; i++) {
+            for (int i = 0; i < gp.obj[0].length; i++) {
                 if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].collision) {
-                    int oCol = gp.obj[gp.currentMap][i].worldX/gp.tileSize;
-                    int oRow = gp.obj[gp.currentMap][i].worldY/gp.tileSize;
+                    int oCol = gp.obj[gp.currentMap][i].solidArea.x/gp.tileSize;
+                    int oRow = gp.obj[gp.currentMap][i].solidArea.y/gp.tileSize;;
                     node[oCol][oRow].solid = true;
+
                 }
             }
+
             //CHECK INTERACTIVE TILES
 
             for (int i = 0; i < gp.iTile[1].length; i++) {
@@ -102,8 +105,8 @@ public class PathFinder {
             //CHECK NPC
             for (int i = 0; i < gp.npc[1].length; i++) {
                 if (gp.npc[gp.currentMap][i] != null && gp.npc[gp.currentMap][i].collision) {
-                    int oCol = gp.npc[gp.currentMap][i].worldX/gp.tileSize;
-                    int oRow = gp.npc[gp.currentMap][i].worldY/gp.tileSize;
+                    int oCol = gp.npc[gp.currentMap][i].solidArea.x/gp.tileSize;
+                    int oRow = gp.npc[gp.currentMap][i].solidArea.y/gp.tileSize;
                     node[oCol][oRow].solid = true;
                 }
             }

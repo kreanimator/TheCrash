@@ -68,7 +68,6 @@ public class GamePanel extends JPanel implements Runnable {
     //ENTITY AND OBJECTS
     public Player player = new Player(this, keyH);
     public Entity[][] obj = new Entity[maxMap][500];
-    public Object[][] obj1 = new Object[maxMap][500];
     public Entity[][] npc = new Entity[maxMap][500];
     public Entity[][] enemy = new Entity[maxMap][500];
     public InteractiveTile[][] iTile = new InteractiveTile[maxMap][200];

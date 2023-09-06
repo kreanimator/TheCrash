@@ -31,6 +31,7 @@ public class NPC_Nick extends NPC{
         dialogueSet = -1;
         getImage();
         setDialogue();
+
     }
 
     public void getImage() {
@@ -47,10 +48,7 @@ public class NPC_Nick extends NPC{
         right2 = setup("npc/nick/right2", gp.tileSize, gp.tileSize);
         right3 = setup("npc/nick/right3", gp.tileSize, gp.tileSize);
     }
-    public void setQuest(){
-        Player.quest.clear();
-        Player.quest.add(new Q_KillBugs(gp));
-    }
+
 
     public void setAction() {
         if (onPath) {
@@ -100,18 +98,32 @@ public class NPC_Nick extends NPC{
     public void speak() {
         npcReactionToAction();
         startDialogue(this, dialogueSet);
+
         dialogueSet++;
-        setQuest();
+
+
+
+
 
 
 
         if(dialogues[dialogueSet][0] == null){
 //            dialogueSet = 0;
-            dialogueSet--;
             questStarted = true;
+            dialogueSet--;
+        }
+        if (questStarted){
+            setQuest();
         }
 //        onPath = true;
     }
+    public void setQuest(){
+        if (questStarted) {
+            Player.quest.clear();
+            Player.quest.add(new Q_KillBugs(gp));
+        }
+    }
+
 }
 
 

@@ -11,6 +11,7 @@ public class OBJ_CampFire extends NPC {
     public OBJ_CampFire(GamePanel gp, int col , int row) {
         super(gp,col,row);
         this.gp = gp;
+
         name = objName;
         speed = 0;
         direction = "down";
