@@ -16,7 +16,7 @@ public class OBJ_Fence3 extends Object {
             speed = 0;
             direction = "down";
             type = typeObstacle;
-            lightRadius = 300;
+
             collision = true;
             getImage();
             setAction();
@@ -38,12 +38,9 @@ public class OBJ_Fence3 extends Object {
 
         }
 
-        public void setAction() {
-
-        }
-
-        public void update() {
-
-        }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
     }
 

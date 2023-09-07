@@ -30,6 +30,8 @@ public class OBJ_GarbageTrunkr extends Object {
 
     }
 
+
+
     public void setLoot(Entity loot) {
         this.loot = loot;
         setDialogue();

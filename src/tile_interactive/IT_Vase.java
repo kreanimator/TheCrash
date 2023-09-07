@@ -21,8 +21,12 @@ public class IT_Vase extends InteractiveTile{
 
         this.worldX = gp.tileSize * col;
         this.worldY = gp.tileSize * row;
+        solidArea.x = 14;
+        solidArea.y = 14;
+        solidArea.width = 20;
+        solidArea.height = 20;
 
-        down1=(setup("objects/interactiveobjects/vase",gp.tileSize,gp.tileSize));
+        down1=(setup("objects/interactiveobjects/vase",gp.tileSize/2,gp.tileSize/2));
         destructible=true;
     }
     public boolean isCorrectItem(Entity entity){

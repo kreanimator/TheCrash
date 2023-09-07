@@ -14,7 +14,7 @@ import java.util.Random;
 public class Entity {
 
     public GamePanel gp;
-    public BufferedImage image, image2, image3, image4, image5;
+    public BufferedImage image, image2, image3;
     public BufferedImage up1, up2, up3, down1, down2, down3, left1, left2, left3, right1, right2, right3;
     public BufferedImage atkup1, atkup2, atkup3, atkdown1, atkdown2, atkdown3, atkleft1, atkleft2,
             atkleft3, atkright1, atkright2, atkright3, guardUp, guardDown, guardLeft, guardRight;
@@ -23,6 +23,7 @@ public class Entity {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collision = false;
     public String[][] dialogues = new String[20][20];
+    public String [] quests = new String[20];
     public Entity attacker;
     public Entity linkedEntity;
     public boolean temp = false;
@@ -33,9 +34,11 @@ public class Entity {
     public int spriteNumber = 1;
     public int dialogueSet = 0;
     public int dialogueIndex = 0;
+    public int questIndex = 0;
     public boolean collisionOn = false;
     public boolean invincible = false;
     public boolean attacking = false;
+    public boolean shooting = false;
     public boolean alive = true;
     public boolean dying = false;
     public boolean hpBarOn = false;
@@ -52,6 +55,7 @@ public class Entity {
     public boolean drawing = true;
 
 
+
     //COUNTER
     public int spriteCounter = 0;
     public int actionLockCounter = 0;
@@ -62,6 +66,7 @@ public class Entity {
     public int knockBackCounter = 0;
     public int guardCounter = 0;
     public int offBalanceCounter = 0;
+    public int useCounter = 0;
 
     //CHARACTERS ATRIBUTES
     public String name;
@@ -94,6 +99,7 @@ public class Entity {
 
     //ITEM ATTRIBUTES
     public ArrayList<Entity> inventory = new ArrayList<>();
+    public static ArrayList<Entity> quest = new ArrayList<>();
     public final int maxInventorySize = 20;
     public int attackValue;
     public int defenseValue;
@@ -109,8 +115,8 @@ public class Entity {
 
     //TYPE
     public int type;
-    public final int typePlayer = 0;
-    public final int typeNPC = 1;
+//    public final int typePlayer = 0;
+//    public final int typeNPC = 1;
     public final int typeEnemy = 2;
     public final int typeMelee = 3;
     public final int typeCrowbar = 4;
@@ -122,6 +128,7 @@ public class Entity {
     public final int typeObstacle = 10;
     public final int typeLight = 11;
     public final int typeShield = 12;
+
 
 
     public Entity(GamePanel gp) {
@@ -234,7 +241,6 @@ public class Entity {
         target.knockbackDirection = attacker.direction;
         target.speed += knockBackPower;
         target.knockBack = true;
-
     }
 
     public void checkCollision() {
@@ -269,6 +275,7 @@ public class Entity {
                     }
 
                 }
+
                 knockBackCounter++;
                 if (knockBackCounter == 10) {
                     knockBackCounter = 0;
@@ -693,10 +700,6 @@ public class Entity {
         }
         return inCamera;
     }
-
-
-
-
 
     public void draw(Graphics2D g2) {
         BufferedImage image = null;

@@ -32,7 +32,7 @@ public class Lighting {
         Graphics2D g2 = (Graphics2D)darknessFilter.getGraphics();
         if(gp.player.currentLight ==null ) {
         g2.setColor(new Color(0,0,0,0.97f));
-        }else {
+        } else {
 
             // Get the center x and y of the light circle
             int centerX = gp.player.screenX + (gp.tileSize) / 2;

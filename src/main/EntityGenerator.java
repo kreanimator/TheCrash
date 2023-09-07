@@ -5,13 +5,12 @@ import object.armor.OBJ_Armor_Learther;
 import object.armor.OBJ_Armor_Metal;
 import object.armor.OBJ_BarrelShield;
 import object.armor.OBJ_Shield;
-import object.exterior.OBJ_Locker;
-import object.interior.*;
+import object.exterior.doors.*;
+import object.interior.lockers.OBJ_Locker1;
 import object.misc.*;
-import object.projectiles.OBJ_Acid;
-import object.projectiles.OBJ_Bullet;
-import object.projectiles.OBJ_ShotgunBullet;
 import object.weapon.*;
+import object.interior.lockers.*;
+import object.exterior.*;
 
 public class EntityGenerator {
 
@@ -22,23 +21,25 @@ public class EntityGenerator {
     }
 
     public Entity getObject(String itemName) {
-        Entity obj = switch (itemName) {
+        return switch (itemName) {
             case OBJ_Armor_Learther.objName -> new OBJ_Armor_Learther(gp);
             case OBJ_Armor_Metal.objName -> new OBJ_Armor_Metal(gp);
             case OBJ_BarrelShield.objName -> new OBJ_BarrelShield(gp);
             case OBJ_Shield.objName -> new OBJ_Shield(gp);
-            //case OBJ_BunkerDoor.objName ->new OBJ_BunkerDoor(gp);
-            //case OBJ_CampFire.objName -> new OBJ_CampFire(gp);
-//            case OBJ_Door.objName-> new OBJ_Door(gp);
-            // case OBJ_GarbageTrunk.objName -> new OBJ_GarbageTrunk(gp);
+//            case OBJ_BunkerDoor.objName -> new OBJ_BunkerDoor();
+//            case OBJ_Door.objName-> new OBJ_Door();
+//            case OBJ_GarbageTrunkfr.objName -> new OBJ_GarbageTrunkfr();
+//            case OBJ_GarbageTrunkl.objName -> new OBJ_GarbageTrunkl();
+//            case OBJ_GarbageTrunkr.objName -> new OBJ_GarbageTrunkr();
             //case OBJ_IronDoor.objName -> new OBJ_IronDoor(gp);
-            //case OBJ_Locker.objName -> new OBJ_Locker(gp);
-            case OBJ_Bed.objName -> new OBJ_Bed(gp);
-            case OBJ_Bookshelf.objName -> new OBJ_Bookshelf(gp);
-            case OBJ_Bookshelf2.objName -> new OBJ_Bookshelf2(gp);
-            case OBJ_Brokenlocker.objName -> new OBJ_Brokenlocker(gp);
-            case OBJ_Chair.objName -> new OBJ_Chair(gp);
-            case OBJ_Table.objName -> new OBJ_Table(gp);
+//            case OBJ_Locker1.objName -> new OBJ_Locker1();
+//            case OBJ_Locker2.objName -> new OBJ_Locker2();
+//            case OBJ_Locker3.objName -> new OBJ_Locker3();
+//            case OBJ_Locker4.objName -> new OBJ_Locker4();
+//            case OBJ_Locker5.objName -> new OBJ_Locker5();
+//            case OBJ_Locker6.objName -> new OBJ_Locker6();
+            case OBJ_Amphetamine.objName -> new OBJ_Amphetamine(gp);
+            case OBJ_Booze.objName ->  new OBJ_Booze(gp);
             case OBJ_Flashlight.objName -> new OBJ_Flashlight(gp);
             case OBJ_HP.objName -> new OBJ_HP(gp);
             case OBJ_HPPack.objName -> new OBJ_HPPack(gp);
@@ -46,10 +47,8 @@ public class EntityGenerator {
             case OBJ_KeyCard.objName -> new OBJ_KeyCard(gp);
             case OBJ_Lockpick.objName -> new OBJ_Lockpick(gp);
             case OBJ_Money.objName -> new OBJ_Money(gp);
+            case OBJ_SweetBubaleh.objName -> new OBJ_SweetBubaleh(gp);
             case OBJ_Tent.objName -> new OBJ_Tent(gp);
-            case OBJ_Acid.objName -> new OBJ_Acid(gp);
-            case OBJ_Bullet.objName -> new OBJ_Bullet(gp);
-            case OBJ_ShotgunBullet.objName -> new OBJ_ShotgunBullet(gp);
             case OBJ_Ammo_Pistol.objName -> new OBJ_Ammo_Pistol(gp);
             case OBJ_Ammo_Shotgun.objName -> new OBJ_Ammo_Shotgun(gp);
             case OBJ_Melee_Bat_normal.objName -> new OBJ_Melee_Bat_normal(gp);
@@ -59,6 +58,5 @@ public class EntityGenerator {
 
             default -> null;
         };
-        return obj;
     }
 }

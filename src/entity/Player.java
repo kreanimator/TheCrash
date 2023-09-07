@@ -4,11 +4,10 @@ import main.GamePanel;
 import main.KeyHandler;
 import object.armor.OBJ_Armor_Learther;
 import object.armor.OBJ_Shield;
-import object.misc.OBJ_Flashlight;
-import object.misc.OBJ_Key;
-import object.misc.OBJ_KeyCard;
+import object.misc.*;
 import object.projectiles.OBJ_Bullet;
 import object.projectiles.OBJ_ShotgunBullet;
+import object.quests.Q_KillBugs;
 import object.weapon.OBJ_Ammo_Shotgun;
 import object.weapon.OBJ_Melee_Bat_normal;
 import object.weapon.OBJ_Shotgun;
@@ -23,8 +22,18 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
     public boolean attackCanceled = false;
+    public boolean shotCanceled = false;
     public boolean updateLight = false;
+    public boolean underEffect;
+    public boolean drunk;
+    public boolean addict = false;
+    public boolean hangover = false;
+
     int standCounter = 0;
+    public int timesUsed = 0;
+    public int timesDrinked = 0;
+    public int addictionCounter = 0;
+    public int hangoverCounter = 0;
 
 
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -110,9 +119,20 @@ public class Player extends Entity {
 //        inventory.add(new OBJ_Lockpick(gp));
         inventory.add(new OBJ_KeyCard(gp));
        inventory.add(new OBJ_Flashlight(gp));
+        inventory.add(new OBJ_SweetBubaleh(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Amphetamine(gp));
+        inventory.add(new OBJ_Booze(gp));
+        inventory.add(new OBJ_Booze(gp));
+        inventory.add(new OBJ_Booze(gp));
+        inventory.add(new OBJ_HPPack(gp));
+
 
     }
+    public void setQuest(){
 
+    }
     public void setDefaultPositions() {
 
         //gp.currentMap = 3;
@@ -271,6 +291,9 @@ public class Player extends Entity {
 
             }
 
+
+
+
             // CHECK TILE COLLISION
 
             collisionOn = false;
@@ -303,6 +326,10 @@ public class Player extends Entity {
                 projectiles = new OBJ_ShotgunBullet(gp);
             }
 
+            //Setting effects items
+
+
+
 
             //IF COLLISION IS FALSE, PLAYER CAN MOVE
 
@@ -314,16 +341,64 @@ public class Player extends Entity {
                     case "right" -> worldX += speed;
                 }
             }
+            //Check if under effect
+            if(underEffect){
+                useCounter++;
+                if (useCounter == 600){
+                    speed = defaultSpeed;
+                    underEffect = false;
+                    useCounter = 0;
+                }
+            }
+            if(timesUsed ==3){
+                addict = true;
+                addictionCounter++;
+                speed = 1;
+                timesUsed =0;
+                if(addictionCounter == 600){
 
-            if (keyH.ePressed && !attackCanceled) {
+                    speed = defaultSpeed;
+                    addictionCounter = 0;
+                    addict = false;
+                }
+            }
+
+
+            if(drunk){
+                useCounter++;
+                if (useCounter == 600){
+                    defense = getDefense();
+                    drunk = false;
+                    useCounter = 0;
+                }
+            }
+            if(timesDrinked ==3){
+                hangover = true;
+                hangoverCounter++;
+                defense = 0;
+                timesDrinked =0;
+                if (hangoverCounter == 600){
+                    hangover = false;
+                    defense = getDefense();
+                    hangoverCounter = 0;
+                }
+            }
+
+
+
+
+            if (keyH.ePressed && !attackCanceled ) {
                 if (currentWeapon.type == typeMelee || currentWeapon.type == typeCrowbar) {
                     gp.playSE(4);
                     attacking = true;
                     spriteCounter++;
                 }
             }
+
             gp.keyH.ePressed = false;
+
             attackCanceled = false;
+
             guarding = false;
             guardCounter = 0;
 
@@ -348,9 +423,12 @@ public class Player extends Entity {
                 standCounter = 0;
             }
         }
+
+        //Check if under effect
+
         if (gp.keyH.shotKeyPressed && !projectiles.alive && shotAvailableCounter == 30
-                && projectiles.haveResource(this) && !attackCanceled) {
-            attacking = true;
+                && projectiles.haveResource(this) && !shotCanceled) {
+            shooting = true;
             //SET DEFAULT BULLET POSITION
             projectiles.set(worldX, worldY, direction, true, this);
             //SUBTRACT THE COST
@@ -378,6 +456,8 @@ public class Player extends Entity {
             }
 
         }
+        gp.keyH.shotKeyPressed = false;
+        shotCanceled = false;
         if (invincible) {
             invincibleCounter++;
             if (invincibleCounter > 60) {
@@ -459,10 +539,10 @@ public class Player extends Entity {
             }
 
             //OBSTACLES
-            else if (gp.obj[gp.currentMap][i].type == typeObstacle) {
-                if (keyH.ePressed) {
+            else if (gp.obj[gp.currentMap][i].type == typeObstacle ) {
+                if (keyH.ePressed || keyH.shotKeyPressed) {
                     attackCanceled = true;
-
+                    shotCanceled = true;
                     gp.obj[gp.currentMap][i].interact();
                 }
             }
@@ -478,6 +558,7 @@ public class Player extends Entity {
                 gp.ui.addMessage(text);
                 gp.obj[gp.currentMap][i] = null;
             }
+
         }
 
 
@@ -485,8 +566,9 @@ public class Player extends Entity {
 
     public void interactNPC(int i) {
         if (i != 999) {
-        if (gp.keyH.ePressed) {
+        if (gp.keyH.ePressed || gp.keyH.shotKeyPressed) {
                 attackCanceled = true;
+                shotCanceled = true;
                 gp.npc[gp.currentMap][i].speak();
             }
             gp.npc[gp.currentMap][i].move(direction);
@@ -530,7 +612,7 @@ public class Player extends Entity {
 
                 gp.enemy[gp.currentMap][i].life -= damage;
 
-                gp.ui.addMessage(String.valueOf(damage + " damage!"));
+                gp.ui.addMessage(damage + " damage!");
                 gp.enemy[gp.currentMap][i].invincible = true;
                 generateParticle(gp.player.currentWeapon, gp.enemy[gp.currentMap][i]);
                 gp.enemy[gp.currentMap][i].damageReaction();
@@ -626,9 +708,12 @@ public class Player extends Entity {
                         inventory.remove(itemIndex);
                     }
                 }
+
+
                 //later
 
             }
+
         }
     }
 
@@ -788,8 +873,24 @@ public class Player extends Entity {
             //CHECK SOLID AREA
             g2.setColor(Color.RED);
             g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+
         }
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+        if (addict){
+            x = gp.screenWidth/2;
+            y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[ADDICTED]",x,y);
+        }
+        if (hangover){
+            x = gp.screenWidth/2 - (gp.tileSize *4);
+            y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[HANGOVER]",x,y);
+        }
+
     }
 
 }

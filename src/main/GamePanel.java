@@ -7,6 +7,7 @@ import entity.Player;
 import environment.EnvironmentManager;
 import tile_interactive.InteractiveTile;
 import tiles.Map;
+import tiles.RoofManager;
 import tiles.TileManager;
 
 import javax.swing.*;
@@ -31,16 +32,15 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxWorldCol = 100;
     public final int maxWorldRow = 100;
     public final int maxMap = 10;
+    public final int maxRoofMap = 10;
     public int currentMap = 0;
+    public int currentRoofMap = 0;
     //FOR FULL SCREEN
 
     int screenWidth2 = screenWidth;
     int screenHeight2 = screenHeight;
-
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
-    //    BufferedImage tempScreen;
-//    Graphics2D g2;
     boolean fullScreenOn = false;
 
     //FPS
@@ -48,12 +48,12 @@ public class GamePanel extends JPanel implements Runnable {
 
     //SYSTEM
     public TileManager tileM = new TileManager(this);
+    public RoofManager roofM = new RoofManager(this);
     public KeyHandler keyH = new KeyHandler(this);
     Sound music = new Sound();
     Sound se = new Sound();
     Map map = new Map(this);
     SaveLoad saveLoad = new SaveLoad(this);
-
     public CollisionDetector cDetector = new CollisionDetector(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
@@ -67,7 +67,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //ENTITY AND OBJECTS
     public Player player = new Player(this, keyH);
-    public Entity[][] obj = new Entity[maxMap][500];
+    public Entity[][] obj = new Entity[maxMap][1000];
     public Entity[][] npc = new Entity[maxMap][500];
     public Entity[][] enemy = new Entity[maxMap][500];
     public InteractiveTile[][] iTile = new InteractiveTile[maxMap][200];
@@ -95,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //OTHERS
     public boolean bossBattleOn = false;
+    public boolean roofDrawing = true;
 
     //AREA
 
@@ -257,6 +258,8 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
 
+            tileM.update();
+
 
             //LIGHT
             eManager.update();
@@ -335,11 +338,12 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
             // SORT
-
-            entityList.sort((o1, o2) -> {
-                int result = Integer.compare(o1.worldY, o2.worldY);
-                return result;
-            });
+            entityList.sort(Comparator.comparingInt(o -> o.worldY));
+            //The old code that Intellij changed to comparator
+//            entityList.sort((o1, o2) -> {
+//                int result = Integer.compare(o1.worldY, o2.worldY);
+//                return result;
+//            });
             //DRAW ENTITIES
 
             for (int i = 0; i < entityList.size(); i++) {
@@ -348,17 +352,25 @@ public class GamePanel extends JPanel implements Runnable {
             // EMPTY ENTITY LIST
             entityList.clear();
 
-            //MINIMAP
-            map.drawMiniMap(g2);
+            //DRAW ROOFS
+            if (roofDrawing){
+                roofM.draw(g2);
+            }
+
 
             //Environment
             eManager.draw(g2);
 
-            //CUTSCENE MANAGER
+            //MINIMAP
+            map.drawMiniMap(g2);
+
+
+
 
 
             //UI
             ui.draw(g2);
+            //CUTSCENE MANAGER
             cutSceneManager.draw(g2);
         }
 
@@ -403,20 +415,6 @@ public class GamePanel extends JPanel implements Runnable {
         se.play();
     }
     public void changeArea(){
-
-//        if(nextArea != currentArea){
-//            stopMusic();
-//            if(nextArea == outside){
-//                playSE(0);
-//            }
-//            if(nextArea == cave){
-//                playSE(22);
-//            }
-//            if(nextArea == outside){
-//                playSE(27);
-//            }
-//        }
-
         currentArea = nextArea;
         aSetter.setEnemy();
     }

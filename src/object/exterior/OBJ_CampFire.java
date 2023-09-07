@@ -11,6 +11,7 @@ public class OBJ_CampFire extends NPC {
     public OBJ_CampFire(GamePanel gp, int col , int row) {
         super(gp,col,row);
         this.gp = gp;
+
         name = objName;
         speed = 0;
         direction = "down";
@@ -46,6 +47,10 @@ public class OBJ_CampFire extends NPC {
         down2 = setup("objects/campfire/5", width, height);
         down3 = setup("objects/campfire/6", width, height);
 
+    }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 
 

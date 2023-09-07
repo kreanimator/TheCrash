@@ -14,7 +14,7 @@ public class OBJ_IronDoor extends Object {
         super(gp, col, row);
         type = typeObstacle;
         name = objName;
-        image = setup("objects/interactiveobjects/bunkerdoor2", gp.tileSize, gp.tileSize);
+        image = setup("tiles/exterior/doors/bunkerdoor2", gp.tileSize, gp.tileSize);
         down1 = image;
         collision = true;
         this.gp = gp;

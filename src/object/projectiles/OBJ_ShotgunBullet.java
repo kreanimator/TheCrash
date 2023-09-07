@@ -23,6 +23,13 @@ public class OBJ_ShotgunBullet extends Projectiles {
             attack = 5;
             useCost = 1;
             alive = false;
+
+            solidArea.width = 5;
+            solidArea.height = 5;
+            solidArea.x = gp.tileSize/2;
+            solidArea.y = gp.tileSize/2;
+            solidAreaDefaultX=solidArea.x;
+            solidAreaDefaultY=solidArea.y;
             getImage();
 
 

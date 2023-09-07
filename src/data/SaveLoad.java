@@ -1,7 +1,6 @@
 package data;
 
 import main.GamePanel;
-
 import java.io.*;
 
 public class SaveLoad {
@@ -15,7 +14,7 @@ public class SaveLoad {
 
     public void save() {
         try {
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("save.dat"));
             DataStorage dt = new DataStorage();
             //Player stats
             dt.level = gp.player.level;
@@ -53,6 +52,8 @@ public class SaveLoad {
             dt.mapObjectLootNames = new String[gp.maxMap][gp.obj[1].length];
             dt.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
 
+
+
             for(int mapNum = 0; mapNum < gp.maxMap;mapNum++){
                 for(int i =0 ; i < gp.obj[1].length; i++){
                     if(gp.obj[mapNum][i]==null){
@@ -82,7 +83,7 @@ public class SaveLoad {
 
     public void load() {
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("save.dat")));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(("save.dat")));
             //Read the datastorage object
             DataStorage ds = (DataStorage)ois.readObject();
             gp.player.level = ds.level;
@@ -140,6 +141,7 @@ public class SaveLoad {
 
         } catch (Exception e) {
             System.out.println("Load exception!");
+            System.out.println(e);
         }
     }
 }

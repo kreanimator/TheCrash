@@ -24,9 +24,10 @@ public class TileManager {
         tiles = new Tiles[1000];
         mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
         getTileImage();
-        loadMap("/resources/maps/world1.txt", 0);
-        loadMap("/resources/maps/cave.txt", 1);
-        loadMap("/resources/maps/bunker1.txt", 2);
+        loadMap("/resources/maps/world1.txt",0);
+        loadMap("/resources/maps/factorybasement.txt", 1);
+        loadMap("/resources/maps/cave.txt", 2);
+
         loadMap("/resources/maps/bunker2.txt", 3);
     }
 
@@ -206,8 +207,8 @@ public class TileManager {
         setup(170, "0171", false);
         setup(171, "0172", false);
         setup(172, "0173", false);
-        setup(173, "0174", true);
-        setup(174, "0175", true);
+        setup(173, "0174", false);
+        setup(174, "0175", false);
         setup(175, "0176", false);
         setup(176, "0177", false);
         setup(177, "0178", false);
@@ -215,8 +216,8 @@ public class TileManager {
         setup(179, "0180", false);
         setup(180, "0181", false);
         setup(181, "0182", false);
-        setup(182, "0183", true);
-        setup(183, "0184", true);
+        setup(182, "0183", false);
+        setup(183, "0184", false);
         setup(184, "0185", false);
         setup(185, "0186", false);
         setup(186, "0187", false);
@@ -343,6 +344,8 @@ public class TileManager {
         setup(307, "0308", false);
         setup(308, "0309", false);
         setup(309, "0310", false);
+        setup(310, "0311", false);
+        setup(311, "0312", false);
         setup(312, "0313", false);
         setup(313, "0314", false);
         setup(314, "0315", false);
@@ -358,11 +361,125 @@ public class TileManager {
         setup(324, "0325", false);
         setup(325, "0326", false);
         setup(326, "0327", false);
-        //setup(i, "0316", false);i++;
-
-
-
-
+        setup(327, "0328", false);
+        setup(328, "0329", false);
+        setup(329, "0330", false);
+        setup(330, "0331", false);
+        setup(331, "0332", true);
+        setup(332, "0333", false);
+        setup(333, "0334", true);
+        setup(334, "0335", true);
+        setup(335, "0336", true);
+        setup(336, "0337", true);
+        setup(337, "0338", true);
+        setup(338, "0339", true);
+        setup(339, "0340", true);
+        setup(340, "0341", true);
+        setup(341, "0342", true);
+        setup(342, "0343", true);
+        setup(343, "0344", true);
+        setup(344, "0345", true);
+        setup(345, "0346", true);
+        setup(346, "0347", true);
+        setup(347, "0348", true);
+        setup(348, "0349", true);
+        setup(349, "0350", true);
+        setup(350, "0351", true);
+        setup(351, "0352", true);
+        setup(352, "0353", true);
+        setup(353, "0354", true);
+        setup(354, "0355", true);
+        setup(355, "0356", true);
+        setup(356, "0357", true);
+        setup(357, "0358", true);
+        setup(358, "0359", true);
+        setup(359, "0360", true);
+        setup(360, "0361", true);
+        setup(361, "0362", true);
+        setup(362, "0363", true);
+        setup(363, "0364", false);
+        setup(364, "0365", false);
+        setup(365, "0366", false);
+        setup(366, "0367", false);
+        setup(367, "0368", false);
+        setup(368, "0369", true);
+        setup(369, "0370", false);
+        setup(370, "0371", false);
+        setup(371, "0372", true);
+        setup(372, "0373", false);
+        setup(373, "0374", false);
+        setup(374, "0375", true);
+        setup(375, "0376", true);
+        setup(376, "0377", true);
+        setup(377, "0378", true);
+        setup(378, "0379", false);
+        setup(379, "0380", true);
+        setup(380, "0381", true);
+        setup(381, "0382", true);
+        setup(382, "0383", true);
+        setup(383, "0384", true);
+        setup(384, "0385", true);
+        setup(385, "0386", true);
+        setup(386, "0387", true);
+        setup(387, "0388", false);
+        setup(388, "0389", false);
+        setup(389, "0390", false);
+        setup(390, "0391", false);
+        setup(391, "0392", false);
+        setup(392, "0393", false);
+        setup(393, "0394", false);
+        setup(394, "0395", false);
+        setup(395, "0396", true);
+        setup(396, "0397", true);
+        setup(397, "0398", true);
+        setup(398, "0399", true);
+        setup(399, "0400", true);
+        setup(400, "0401", true);
+        setup(401, "0402", true);
+        setup(402, "0403", true);
+        setup(403, "0404", true);
+        setup(404, "0405", true);
+        setup(405, "0406", true);
+        setup(406, "0407", true);
+        setup(407, "0408", true);
+        setup(408, "0409", true);
+        setup(409, "0410", true);
+        setup(410, "0411", true);
+        setup(411, "0412", true);
+        setup(412, "0413", true);
+        setup(413, "0414", true);
+        setup(414, "0415", true);
+        setup(415, "0416", true);
+        setup(416, "0417", true);
+        setup(417, "0418", true);
+        setup(418, "0419", true);
+        setup(419, "0420", true);
+        setup(420, "0421", true);
+        setup(421, "0422", true);
+        setup(422, "0423", true);
+        setup(423, "0424", true);
+        setup(424, "0425", true);
+        setup(425, "0426", true);
+        setup(426, "0427", true);
+        setup(427, "0428", true);
+        setup(428, "0429", true);
+        setup(429, "0430", true);
+        setup(430, "0431", true);
+        setup(431, "0432", true);
+        setup(432, "0433", true);
+        setup(433, "0434", true);
+        setup(434, "0435", true);
+        setup(435, "0436", true);
+        setup(436, "0437", true);
+        setup(437, "0438", true);
+        setup(438, "0439", true);
+        setup(439, "0440", true);
+        setup(440, "0441", true);
+        setup(441, "0442", false);
+        setup(442, "0443", false);
+        setup(443, "0444", false);
+        setup(444, "0445", false);
+        setup(445, "0446", false);
 
     }
 
@@ -484,5 +601,8 @@ public class TileManager {
             }
         }
         }
+
+    public void update() {
     }
+}
 

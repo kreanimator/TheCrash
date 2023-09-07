@@ -76,9 +76,6 @@ public class KeyHandler implements KeyListener {
         }
     }
 
-
-
-
     public void titleState(int key){
         if (gp.ui.titleScreenState == 0) {
             if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
@@ -445,6 +442,18 @@ public class KeyHandler implements KeyListener {
     private void questState(int key) {
         if (key == KeyEvent.VK_J) {
             gp.gameState = gp.playState;
+        }
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
+            if (gp.ui.playerSlotRow != 0) {
+                gp.ui.playerSlotRow--;
+                gp.playSE(9);
+            }
+        }
+        if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
+            if (gp.ui.playerSlotRow != 3) {
+                gp.ui.playerSlotRow++;
+                gp.playSE(9);
+            }
         }
     }
     @Override

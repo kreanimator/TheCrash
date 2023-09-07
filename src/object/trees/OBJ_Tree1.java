@@ -24,18 +24,18 @@ public class OBJ_Tree1 extends NPC {
         getImage();
         setAction();
 
-        solidArea.x = gp.tileSize+12;
-        solidArea.y = gp.tileSize +24;
-        solidArea.width = 24;
-        solidArea.height = gp.tileSize*2;
+        solidArea.x = 40;
+        solidArea.y = gp.tileSize;
+        solidArea.width = 20;
+        solidArea.height = gp.tileSize+24;
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
     }
     public void getImage() {
-        int width= gp.tileSize *3;
-        int height = gp.tileSize * 4;
+        int width= gp.tileSize *2;
+        int height = gp.tileSize * 3;
 
         down1 = setup("tiles/trees/tree1/1",width,height );
         down2 = setup("tiles/trees/tree1/2",width,height );
@@ -49,6 +49,10 @@ public class OBJ_Tree1 extends NPC {
         right1 = setup("tiles/trees/tree1/10",width,height );
         right2 = setup("tiles/trees/tree1/11",width,height );
         right3 = setup("tiles/trees/tree1/12",width,height );
+    }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
     }
 
 }

@@ -18,7 +18,7 @@ public class OBJ_Door extends Object {
 
         type = typeObstacle;
         name = objName;
-        image = setup("objects/interactiveobjects/doorclosed", width, height);
+        image = setup("tiles/exterior/doors/doorclosed", width, height);
         image2 = null;
         //image2 = setup("objects/interactiveobjects/dooropened", width, height);
         down1 = image;
@@ -34,6 +34,9 @@ public class OBJ_Door extends Object {
 
     }
 
+
+
+
     public void interact() {
 
         if (!opened) {
@@ -41,6 +44,9 @@ public class OBJ_Door extends Object {
             down1 = image2;
             opened = true;
             collision = false;
+        }else{
+            gp.player.attackCanceled = false;
+            gp.player.shotCanceled = false;
         }
 
     }

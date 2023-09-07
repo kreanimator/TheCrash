@@ -1,12 +1,17 @@
 package entity;
 
 import main.GamePanel;
+import object.quests.Q_KillBugs;
 
 import java.util.Random;
 
 public class NPC_Nick extends NPC{
     boolean questStarted = false;
     boolean finishedPath = true;
+    boolean questCompleted = false;
+
+
+    String questText = "";
     public static final String npcName = "Nick";
 
     public NPC_Nick(GamePanel gp,int col, int row) {
@@ -26,6 +31,7 @@ public class NPC_Nick extends NPC{
         dialogueSet = -1;
         getImage();
         setDialogue();
+
     }
 
     public void getImage() {
@@ -43,17 +49,18 @@ public class NPC_Nick extends NPC{
         right3 = setup("npc/nick/right3", gp.tileSize, gp.tileSize);
     }
 
+
     public void setAction() {
-//        if (onPath) {
-//            int goalCol = 32;
-//            int goalRow = 84;
-////            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
-////            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
-//            searchPath(goalCol, goalRow);
-//            finishedPath = true;
-//            speed = 1;
-//
-//        } else {
+        if (onPath) {
+//            int goalCol = 30;
+//            int goalRow = 71;
+            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
+            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
+            searchPath(goalCol, goalRow);
+            finishedPath = true;
+            speed = 1;
+
+        } else {
             actionLockCounter++;
             if (actionLockCounter == 240) {
                 Random random = new Random();
@@ -74,7 +81,7 @@ public class NPC_Nick extends NPC{
                 actionLockCounter = 0;
             }
         }
-//    }
+    }
 
     public void setDialogue() {
         dialogues[0][0] = "Hey, you woke up ! That's Amazing!";
@@ -84,23 +91,39 @@ public class NPC_Nick extends NPC{
 
         dialogues[1][0] = " There are a lot of bugs on the field near my house, please make them disappear...";
 
-
-
-
     }
+
 
 
     public void speak() {
         npcReactionToAction();
         startDialogue(this, dialogueSet);
+
         dialogueSet++;
 
-        if(dialogues[dialogueSet][0] ==null){
+
+
+
+
+
+
+        if(dialogues[dialogueSet][0] == null){
 //            dialogueSet = 0;
+            questStarted = true;
             dialogueSet--;
+        }
+        if (questStarted){
+            setQuest();
         }
 //        onPath = true;
     }
+    public void setQuest(){
+        if (questStarted) {
+            Player.quest.clear();
+            Player.quest.add(new Q_KillBugs(gp));
+        }
+    }
+
 }
 
 

@@ -36,4 +36,8 @@ public class OBJ_Campfire2 extends Object {
 
 
     }
+    public void interact(){
+        gp.player.attackCanceled = false;
+        gp.player.shotCanceled = false;
+    }
 }

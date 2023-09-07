@@ -21,6 +21,13 @@ public class OBJ_Acid extends Projectiles {
         attack = 4;
         useCost = 1;
         alive = false;
+
+        solidArea.width = 15;
+        solidArea.height = 15;
+        solidArea.x = gp.tileSize/2;
+        solidArea.y = gp.tileSize/2;
+        solidAreaDefaultX=solidArea.x;
+        solidAreaDefaultY=solidArea.y;
         getImage();
 
 
