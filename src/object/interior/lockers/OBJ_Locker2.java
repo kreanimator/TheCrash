@@ -30,9 +30,7 @@ public class OBJ_Locker2 extends Object {
     }
 
 
-    public OBJ_Locker2() {
 
-    }
 
     public void setLoot(Entity loot) {
         this.loot = loot;

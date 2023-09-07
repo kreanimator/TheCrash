@@ -34,9 +34,7 @@ public class OBJ_Door extends Object {
 
     }
 
-    public OBJ_Door() {
 
-    }
 
 
     public void interact() {

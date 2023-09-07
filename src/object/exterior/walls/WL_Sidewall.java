@@ -1,5 +1,6 @@
 package object.exterior.walls;
 
+import entity.NPC;
 import main.GamePanel;
 import object.Object;
 
@@ -14,7 +15,6 @@ public class WL_Sidewall extends Object {
         speed = 0;
         direction = "down";
         type = typeObstacle;
-        lightRadius = 300;
         collision = true;
         getImage();
 

@@ -28,9 +28,7 @@ public class OBJ_Locker6 extends Object {
 
     }
 
-    public OBJ_Locker6() {
 
-    }
 
     public void setLoot(Entity loot) {
         this.loot = loot;

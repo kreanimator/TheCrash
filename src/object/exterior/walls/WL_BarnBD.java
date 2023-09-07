@@ -15,7 +15,6 @@ public class WL_BarnBD extends Object {
         speed = 0;
         direction = "down";
         type = typeObstacle;
-        lightRadius = 300;
         collision = true;
         getImage();
 

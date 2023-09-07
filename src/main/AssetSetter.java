@@ -509,6 +509,7 @@ public class AssetSetter {
         int mapNum = 0;
         int i =0;
         gp.npc[mapNum][i] = new NPC_Nick(gp,17,83);i++;
+        gp.obj[mapNum][i] = new OBJ_BunkerDoor(gp,18,83);i++;
 
         //TREES
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,17,70);i++;

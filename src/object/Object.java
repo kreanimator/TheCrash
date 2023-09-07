@@ -10,7 +10,5 @@ public class Object extends Entity {
         this.worldX = gp.tileSize * col;
         this.worldY = gp.tileSize * row;
     }
-    public Object() {
 
-    }
 }

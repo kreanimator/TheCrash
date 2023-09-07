@@ -86,10 +86,9 @@ public class PathFinder {
             //CHECK OBJECTS
             for (int i = 0; i < gp.obj[0].length; i++) {
                 if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].collision) {
-                    int oCol = gp.obj[gp.currentMap][i].solidArea.x/gp.tileSize;
-                    int oRow = gp.obj[gp.currentMap][i].solidArea.y/gp.tileSize;;
+                    int oCol = (gp.obj[gp.currentMap][i].worldX +gp.obj[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                    int oRow = (gp.obj[gp.currentMap][i].worldY+gp.obj[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
                     node[oCol][oRow].solid = true;
-
                 }
             }
 
@@ -97,17 +96,17 @@ public class PathFinder {
 
             for (int i = 0; i < gp.iTile[1].length; i++) {
                 if (gp.iTile[gp.currentMap][i] != null && gp.iTile[gp.currentMap][i].destructible) {
-                    int itCol = gp.iTile[gp.currentMap][i].worldX / gp.tileSize;
-                    int itCRow = gp.iTile[gp.currentMap][i].worldY / gp.tileSize;
+                    int itCol = (gp.iTile[gp.currentMap][i].worldX +gp.iTile[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                    int itCRow = (gp.iTile[gp.currentMap][i].worldY+gp.iTile[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
                     node[itCol][itCRow].solid = true;
                 }
             }
             //CHECK NPC
             for (int i = 0; i < gp.npc[1].length; i++) {
                 if (gp.npc[gp.currentMap][i] != null && gp.npc[gp.currentMap][i].collision) {
-                    int oCol = gp.npc[gp.currentMap][i].solidArea.x/gp.tileSize;
-                    int oRow = gp.npc[gp.currentMap][i].solidArea.y/gp.tileSize;
-                    node[oCol][oRow].solid = true;
+                    int nCol = (gp.npc[gp.currentMap][i].worldX +gp.npc[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                    int nRow = (gp.npc[gp.currentMap][i].worldY+gp.npc[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
+                    node[nCol][nRow].solid = true;
                 }
             }
             //SET COST

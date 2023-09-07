@@ -30,9 +30,7 @@ public class OBJ_GarbageTrunkfr extends Object {
 
     }
 
-    public OBJ_GarbageTrunkfr() {
 
-    }
 
     public void setLoot(Entity loot) {
         this.loot = loot;

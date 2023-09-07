@@ -24,9 +24,9 @@ public class OBJ_Tree1 extends NPC {
         getImage();
         setAction();
 
-        solidArea.x = 36;
+        solidArea.x = 40;
         solidArea.y = gp.tileSize;
-        solidArea.width = 24;
+        solidArea.width = 20;
         solidArea.height = gp.tileSize+24;
 
         solidAreaDefaultX = solidArea.x;

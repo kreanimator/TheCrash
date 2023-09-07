@@ -27,9 +27,6 @@ public class OBJ_BunkerDoor extends Object {
 
     }
 
-    public OBJ_BunkerDoor() {
-
-    }
 
 
     public void setDialog(){
