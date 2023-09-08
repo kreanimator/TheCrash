@@ -73,6 +73,35 @@ public class PathFinder {
         int col = 0;
         int row = 0;
 
+        //CHECK OBJECTS
+        for (int i = 0; i < gp.obj[1].length; i++) {
+            if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].collision) {
+                int oCol = (gp.obj[gp.currentMap][i].worldX +gp.obj[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                int oRow = (gp.obj[gp.currentMap][i].worldY+gp.obj[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
+
+                node[oCol][oRow].solid = true;
+
+            }
+        }
+
+        //CHECK INTERACTIVE TILES
+
+        for (int i = 0; i < gp.iTile[1].length; i++) {
+            if (gp.iTile[gp.currentMap][i] != null && gp.iTile[gp.currentMap][i].destructible) {
+                int itCol = (gp.iTile[gp.currentMap][i].worldX +gp.iTile[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                int itCRow = (gp.iTile[gp.currentMap][i].worldY+gp.iTile[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
+                node[itCol][itCRow].solid = true;
+            }
+        }
+        //CHECK NPC
+        for (int i = 0; i < gp.npc[1].length; i++) {
+            if (gp.npc[gp.currentMap][i] != null && gp.npc[gp.currentMap][i].collision) {
+                int nCol = (gp.npc[gp.currentMap][i].worldX +gp.npc[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
+                int nRow = (gp.npc[gp.currentMap][i].worldY+gp.npc[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
+                node[nCol][nRow].solid = true;
+            }
+        }
+
         while (col < gp.maxWorldCol && row < gp.maxWorldRow) {
 
             //SET SOLID NODE
@@ -83,32 +112,7 @@ public class PathFinder {
             }
 
 //
-            //CHECK OBJECTS
-            for (int i = 0; i < gp.obj[0].length; i++) {
-                if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].collision) {
-                    int oCol = (gp.obj[gp.currentMap][i].worldX +gp.obj[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
-                    int oRow = (gp.obj[gp.currentMap][i].worldY+gp.obj[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
-                    node[oCol][oRow].solid = true;
-                }
-            }
 
-            //CHECK INTERACTIVE TILES
-
-            for (int i = 0; i < gp.iTile[1].length; i++) {
-                if (gp.iTile[gp.currentMap][i] != null && gp.iTile[gp.currentMap][i].destructible) {
-                    int itCol = (gp.iTile[gp.currentMap][i].worldX +gp.iTile[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
-                    int itCRow = (gp.iTile[gp.currentMap][i].worldY+gp.iTile[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
-                    node[itCol][itCRow].solid = true;
-                }
-            }
-            //CHECK NPC
-            for (int i = 0; i < gp.npc[1].length; i++) {
-                if (gp.npc[gp.currentMap][i] != null && gp.npc[gp.currentMap][i].collision) {
-                    int nCol = (gp.npc[gp.currentMap][i].worldX +gp.npc[gp.currentMap][i].solidAreaDefaultX) / gp.tileSize;
-                    int nRow = (gp.npc[gp.currentMap][i].worldY+gp.npc[gp.currentMap][i].solidAreaDefaultY) / gp.tileSize;
-                    node[nCol][nRow].solid = true;
-                }
-            }
             //SET COST
             getCost(node[col][row]);
 

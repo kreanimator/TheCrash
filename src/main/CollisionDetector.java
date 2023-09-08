@@ -67,8 +67,11 @@ public class CollisionDetector {
     }
     public int checkObject(Entity entity, boolean player){
 
+        //Temporal direction when it is knockbacked
+
+
         int index =999;
-        String direction = entity.direction;
+       String direction = entity.direction;
 
         if(entity.knockBack){
             direction = entity.knockbackDirection;
@@ -80,6 +83,7 @@ public class CollisionDetector {
                 // Get entity's solid area position
                 entity.solidArea.x = entity.worldX + entity.solidArea.x;
                 entity.solidArea.y = entity.worldY + entity.solidArea.y;
+
                 // Get the object's solid area position
 
                 gp.obj[gp.currentMap][i].solidArea.x = gp.obj[gp.currentMap][i].worldX + gp.obj[gp.currentMap][i].solidArea.x;

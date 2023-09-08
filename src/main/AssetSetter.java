@@ -45,6 +45,7 @@ public class AssetSetter {
 
         //FENCE
         gp.obj[mapNum][i] = new OBJ_Fence1(gp,81,48);i++;
+        gp.obj[mapNum][i] = new OBJ_Fence1(gp,82,48);i++;
         gp.obj[mapNum][i] = new OBJ_Fence1(gp,83,48);i++;
         gp.obj[mapNum][i] = new OBJ_Fence1(gp,85,48);i++;
         gp.obj[mapNum][i] = new OBJ_Fence1(gp,79,48);i++;
@@ -89,6 +90,7 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Fenceside1(gp,65,65);i++;
         gp.obj[mapNum][i] = new OBJ_Fenceside1(gp,65,67);i++;
 
+
         //
         gp.obj[mapNum][i] = new OBJ_Fenceside1(gp,13,13);i++;
         gp.obj[mapNum][i] = new OBJ_Fenceside1(gp,13,15);i++;
@@ -113,6 +115,7 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Fence3(gp,17,21);i++;
         gp.obj[mapNum][i] = new OBJ_Fence4(gp,19,21);i++;
         gp.obj[mapNum][i] = new OBJ_Fence3(gp,21,21);i++;
+
 
 
 

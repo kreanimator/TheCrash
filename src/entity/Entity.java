@@ -23,7 +23,7 @@ public class Entity {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collision = false;
     public String[][] dialogues = new String[20][20];
-    public String [] quests = new String[20];
+
     public Entity attacker;
     public Entity linkedEntity;
     public boolean temp = false;
@@ -956,24 +956,28 @@ public class Entity {
                 //left or right
                 if (enLeftX > nextX) {
                     direction = "left";
-                } else {
+                }
+                if(enLeftX < nextX){
                     direction = "right";
                 }
-            } else if (enTopY > nextY && enLeftX > nextX) {
+            }
+            else if (enTopY > nextY && enLeftX > nextX) {
                 //up or left
                 direction = "up";
                 checkCollision();
                 if (collisionOn) {
                     direction = "left";
                 }
-            } else if (enTopY > nextY && enLeftX < nextX) {
+            }
+            else if (enTopY > nextY && enLeftX < nextX) {
                 //up or right
                 direction = "up";
                 checkCollision();
                 if (collisionOn) {
                     direction = "right";
                 }
-            } else if (enTopY < nextY && enLeftX > nextX) {
+            }
+            else if (enTopY < nextY && enLeftX > nextX) {
                 //down or left
                 direction = "down";
                 checkCollision();

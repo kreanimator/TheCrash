@@ -10,15 +10,13 @@ public class NPC_Nick extends NPC{
     boolean finishedPath = true;
     boolean questCompleted = false;
 
-
-    String questText = "";
     public static final String npcName = "Nick";
 
     public NPC_Nick(GamePanel gp,int col, int row) {
         super(gp,col,row);
         direction = "down";
         name = npcName;
-        defaultSpeed = 1;
+        defaultSpeed = 4;
         speed = defaultSpeed;
         solidArea.x = 14;
         solidArea.y = 16;
@@ -58,7 +56,7 @@ public class NPC_Nick extends NPC{
             int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
             searchPath(goalCol, goalRow);
             finishedPath = true;
-            speed = 1;
+            speed = 4;
 
         } else {
             actionLockCounter++;
