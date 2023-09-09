@@ -52,6 +52,7 @@ public class Sound {
         soundURL[33] = getClass().getResource("/resources/sounds/sodadrop.wav");
         soundURL[34] = getClass().getResource("/resources/sounds/sniff.wav");
         soundURL[35] = getClass().getResource("/resources/sounds/drink.wav");
+        soundURL[36] = getClass().getResource("/resources/sounds/music/easterEggsong.wav");
     }
 
     public void setFile(int i) {

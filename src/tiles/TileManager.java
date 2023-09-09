@@ -28,6 +28,7 @@ public class TileManager {
         loadMap("/resources/maps/factorybasement.txt", 1);
         loadMap("/resources/maps/cave.txt", 2);
         loadMap("/resources/maps/bunker2.txt", 3);
+        loadMap("/resources/maps/pinkyAndBrain.txt", 4);
     }
 
     public void getTileImage() {
@@ -479,6 +480,7 @@ public class TileManager {
         setup(443, "0444", false);
         setup(444, "0445", false);
         setup(445, "0446", false);
+        setup(446, "0447", false);
 
     }
 

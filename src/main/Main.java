@@ -34,7 +34,7 @@ public class Main {
    TODO: 7. Fix pathfinding (Entity does not see high and long objects need to add multiple checkpoints for each object)
    TODO: 8. Develop addiction mechanics. DONE 17.01.2023
    TODO: 9. Fix position of light circle while player is near to the edge of the map.
-   TODO: 10. Develop multiple lighting system.
+   TODO: 10. Develop multiple lighting system.09.09.2023 in progress
    TODO: 11. Add interior objects. DONE 25.01.2023
    TODO: 12. Add and fill more levels.
    TODO: 13. Fix attack cancellation with all objects. Update: Solved 17.01.2023

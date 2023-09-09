@@ -375,6 +375,10 @@ public class AssetSetter {
 //        gp.obj[mapNum][i].worldY = gp.tileSize * 8;
         i++;
 
+        //HIDDEN DOOR
+        gp.obj[mapNum][i] = new OBJ_HiddenDoor(gp,64,79);
+        i++;
+
 
         //BARRELS
         gp.obj[mapNum][i] = new OBJ_ToxicBarrels1(gp, 80,54);i++;
@@ -520,8 +524,8 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,21,84);i++;
         //LIGHT
         gp.lightSources[mapNum][i] = new OBJ_CampFire(gp,31,79);i++;
-        gp.npc[mapNum][i] = new OBJ_Trashbin(gp,80,19);i++;
-        gp.npc[mapNum][i] = new OBJ_Trashbin(gp,63,30);i++;
+        gp.lightSources[mapNum][i] = new OBJ_Trashbin(gp,80,19);i++;
+        gp.lightSources[mapNum][i] = new OBJ_Trashbin(gp,63,30);i++;
 
 
         mapNum = 1;
