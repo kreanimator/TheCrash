@@ -23,6 +23,7 @@ public class NPC_BigRock extends NPC {
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 44;
         solidArea.height = 40;
+        lightRadius = 300;
 
         dialogueSet = -1;
         getImage();

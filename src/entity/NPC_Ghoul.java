@@ -25,6 +25,7 @@ public class NPC_Ghoul extends NPC{
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
+        lightRadius = 300;
 
         getImage();
         setDialogue();

@@ -1,10 +1,11 @@
 package object.exterior;
 
 import entity.Entity;
+import entity.LightSource;
 import entity.NPC;
 import main.GamePanel;
 
-public class OBJ_Trashbin extends NPC {
+public class OBJ_Trashbin extends LightSource {
 
     GamePanel gp;
     public final static String objName = "Trashbin";
@@ -18,6 +19,7 @@ public class OBJ_Trashbin extends NPC {
         type = typeObstacle;
         lightRadius = 300;
         collision = true;
+        updateLight = true;
         getImage();
         setAction();
 

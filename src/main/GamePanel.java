@@ -69,6 +69,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player = new Player(this, keyH);
     public Entity[][] obj = new Entity[maxMap][1000];
     public Entity[][] npc = new Entity[maxMap][500];
+    public Entity[][] lightSources = new Entity[maxMap][10];
     public Entity[][] enemy = new Entity[maxMap][500];
     public InteractiveTile[][] iTile = new InteractiveTile[maxMap][200];
     public Entity[][] projectile = new Entity[maxMap][20];
@@ -216,6 +217,14 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
 
+            //LightSources
+
+            for (int i = 0; i < lightSources[1].length; i++) {
+                if (lightSources[currentMap][i] != null) {
+                    lightSources[currentMap][i].update();
+                }
+            }
+
             //ENEMIES
             for (int i = 0; i < enemy[1].length; i++) {
                 if (enemy[currentMap][i] != null) {
@@ -315,6 +324,11 @@ public class GamePanel extends JPanel implements Runnable {
             for (int i = 0; i < npc[1].length; i++) {
                 if (npc[currentMap][i] != null) {
                     entityList.add(npc[currentMap][i]);
+                }
+            }
+            for (int i = 0; i < lightSources[1].length; i++) {
+                if (lightSources[currentMap][i] != null) {
+                    entityList.add(lightSources[currentMap][i]);
                 }
             }
             for (int i = 0; i < obj[1].length; i++) {

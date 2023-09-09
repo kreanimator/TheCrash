@@ -519,7 +519,7 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,20,83);i++;
         gp.npc[mapNum][i] = new OBJ_Tree1(gp,21,84);i++;
         //LIGHT
-        gp.npc[mapNum][i] = new OBJ_CampFire(gp,31,79);i++;
+        gp.lightSources[mapNum][i] = new OBJ_CampFire(gp,31,79);i++;
         gp.npc[mapNum][i] = new OBJ_Trashbin(gp,80,19);i++;
         gp.npc[mapNum][i] = new OBJ_Trashbin(gp,63,30);i++;
 

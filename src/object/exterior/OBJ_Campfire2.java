@@ -1,9 +1,11 @@
 package object.exterior;
 
+import entity.LightSource;
+import environment.Light;
 import main.GamePanel;
 import object.Object;
 
-public class OBJ_Campfire2 extends Object {
+public class OBJ_Campfire2 extends LightSource {
     GamePanel gp;
     public final static String objName = "Campfire2";
 
@@ -16,6 +18,7 @@ public class OBJ_Campfire2 extends Object {
         type = typeObstacle;
         lightRadius = 300;
         collision = true;
+        updateLight = true;
         getImage();
         setAction();
 

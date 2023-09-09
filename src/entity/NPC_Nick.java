@@ -1,6 +1,7 @@
 package entity;
 
 import main.GamePanel;
+import object.misc.OBJ_KeyCard;
 import object.quests.Q_KillBugs;
 
 import java.util.Random;
@@ -16,13 +17,14 @@ public class NPC_Nick extends NPC{
         super(gp,col,row);
         direction = "down";
         name = npcName;
-        defaultSpeed = 4;
+        defaultSpeed = 2;
         speed = defaultSpeed;
         solidArea.x = 14;
         solidArea.y = 16;
         solidArea.width = 24;
         solidArea.height = 32;
         onPath = true;
+
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
@@ -56,7 +58,7 @@ public class NPC_Nick extends NPC{
             int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
             searchPath(goalCol, goalRow);
             finishedPath = true;
-            speed = 4;
+            speed = 2;
 
         } else {
             actionLockCounter++;
@@ -119,6 +121,8 @@ public class NPC_Nick extends NPC{
         if (questStarted) {
             Player.quest.clear();
             Player.quest.add(new Q_KillBugs(gp));
+//            Player.inventory.clear();
+//            Player.inventory.add(new OBJ_KeyCard(gp));
         }
     }
 

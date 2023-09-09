@@ -20,6 +20,7 @@ public class OBJ_Tree1 extends NPC {
         direction = "down";
         type = typeObstacle;
         collision = true;
+        lightRadius = 300;
 
         getImage();
         setAction();

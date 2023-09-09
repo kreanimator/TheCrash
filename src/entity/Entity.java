@@ -35,6 +35,8 @@ public class Entity {
     public int dialogueSet = 0;
     public int dialogueIndex = 0;
     public int questIndex = 0;
+
+    public boolean updateLight = false;
     public boolean collisionOn = false;
     public boolean invincible = false;
     public boolean attacking = false;
@@ -98,7 +100,7 @@ public class Entity {
     public boolean boss;
 
     //ITEM ATTRIBUTES
-    public ArrayList<Entity> inventory = new ArrayList<>();
+    public static ArrayList<Entity> inventory = new ArrayList<>();
     public static ArrayList<Entity> quest = new ArrayList<>();
     public final int maxInventorySize = 20;
     public int attackValue;

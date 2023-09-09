@@ -23,6 +23,7 @@ public class NPC_Patient extends NPC{
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 44;
         solidArea.height = 15;
+        lightRadius = 300;
 
         dialogueSet = -1;
         getImage();
