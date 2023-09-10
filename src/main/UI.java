@@ -1,6 +1,7 @@
 package main;
 
 import entity.Entity;
+import entity.Player;
 import object.misc.OBJ_HP;
 import object.misc.OBJ_Money;
 import object.weapon.OBJ_Ammo_Pistol;
@@ -20,6 +21,7 @@ public class UI {
     Graphics2D g2;
     public Font myFont;
     BufferedImage hpfull, hphalf, hpblank, pistolAmmo, shotgunAmmo, coin,background;
+
     public String currentDialogue = "";
     public String currentQuest = "";
 
@@ -57,6 +59,8 @@ public class UI {
         hphalf = hpbar.image2;
         hpblank = hpbar.image3;
 
+
+
         Entity pistol = new OBJ_Ammo_Pistol(gp);
         pistolAmmo = pistol.down1;
         Entity shotgun = new OBJ_Ammo_Shotgun(gp);
@@ -88,6 +92,7 @@ public class UI {
             drawEnemyLife();
             drawPlayerAmmo();
             drawMessage();
+            drawStatus();
 
 
         }
@@ -1336,6 +1341,22 @@ public class UI {
         g2.drawRoundRect(x + 5, y + 5, width - 10, height - 10, 35, 35);
 
     }
+    public void drawStatus(){
+        if (Player.addict){
+            int x = gp.screenWidth/2;
+            int y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[ADDICTED]",x,y);
+        }
+        if (Player.hangover){
+            int x = gp.screenWidth/2 - (gp.tileSize *4);
+            int y = gp.tileSize;
+            g2.setFont(gp.ui.myFont.deriveFont(20f));
+            g2.setColor(Color.GREEN);
+            g2.drawString("[HANGOVER]",x,y);
+        }
+    }
 
     public int getXforCenteredText(String text) {
         int length = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
@@ -1347,4 +1368,5 @@ public class UI {
         int x = tailX - length;
         return x;
     }
+
 }

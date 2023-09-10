@@ -1,8 +1,13 @@
 package environment;
 import entity.Entity;
 import main.GamePanel;
+import main.UtilityTool;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.Objects;
 
 public class Lighting {
 
@@ -18,6 +23,7 @@ public class Lighting {
     public int dayState = day;
     public boolean nightOn = false;
     Entity entity;
+    BufferedImage sun, sunset, sunrise, moon;
 
 
     public Lighting(GamePanel gp) {
@@ -133,16 +139,30 @@ public class Lighting {
 
 
         //DEBUG
-        String currentDayState = switch (dayState) {
-            case day -> "Day";
-            case night -> "Night";
-            case dusk -> "Dusk";
-            case dawn -> "Dawn";
-            default -> "";
+        BufferedImage currentDayState = switch (dayState) {
+            case day -> setup("ui/daystate/sun", gp.tileSize, gp.tileSize);
+            case night -> setup("ui/daystate/moon", gp.tileSize, gp.tileSize);
+            case dusk -> setup("ui/daystate/sunset", gp.tileSize, gp.tileSize);
+            case dawn -> setup("ui/daystate/sunrise", gp.tileSize, gp.tileSize);
+
+            default -> throw new IllegalStateException("Unexpected value: " + dayState);
         };
 
-        g2.setColor(Color.WHITE);
-        g2.setFont(gp.ui.myFont.deriveFont(20f));
-        g2.drawString(currentDayState,800,500);
+        g2.drawImage(currentDayState,gp.tileSize * 20,gp.tileSize / 2,null);
+    }
+    public BufferedImage setup(String imagePath, int width, int height) {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/resources/" + imagePath + ".png")));
+            image = uTool.scaleImage(image, width, height);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+
     }
 }

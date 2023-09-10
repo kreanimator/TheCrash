@@ -26,8 +26,8 @@ public class Player extends Entity {
     public boolean updateLight = false;
     public boolean underEffect;
     public boolean drunk;
-    public boolean addict = false;
-    public boolean hangover = false;
+    public static boolean addict = false;
+    public static boolean hangover = false;
 
     int standCounter = 0;
     public int timesUsed = 0;
@@ -876,20 +876,7 @@ public class Player extends Entity {
 
         }
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-        if (addict){
-            x = gp.screenWidth/2;
-            y = gp.tileSize;
-            g2.setFont(gp.ui.myFont.deriveFont(20f));
-            g2.setColor(Color.GREEN);
-            g2.drawString("[ADDICTED]",x,y);
-        }
-        if (hangover){
-            x = gp.screenWidth/2 - (gp.tileSize *4);
-            y = gp.tileSize;
-            g2.setFont(gp.ui.myFont.deriveFont(20f));
-            g2.setColor(Color.GREEN);
-            g2.drawString("[HANGOVER]",x,y);
-        }
+
 
     }
 

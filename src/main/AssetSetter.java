@@ -587,8 +587,8 @@ public class AssetSetter {
 //Level1 EasterEgg
         mapNum = 4;
         i=0;
-        gp.npc[mapNum][i] = new NPC_Brain(gp,38,40);i++;
-        gp.npc[mapNum][i] = new NPC_Pinky(gp,40,40);i++;
+        gp.npc[mapNum][i] = new NPC_Brain(gp,63,34);i++;
+        gp.npc[mapNum][i] = new NPC_Pinky(gp,61,35);i++;
 
 
 

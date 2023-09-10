@@ -22,7 +22,7 @@ public class NPC_Brain extends NPC{
         solidArea.y = 12;
         solidArea.width = 36;
         solidArea.height = 36;
-        //onPath = true;
+        onPath = true;
 
 
         solidAreaDefaultX = solidArea.x;
@@ -51,13 +51,29 @@ public class NPC_Brain extends NPC{
 
     public void setAction() {
         if (onPath) {
-//            int goalCol = 30;
-//            int goalRow = 71;
-            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
-            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
+            int goalCol = 60;
+            int goalRow = 46;
+//            int goalCol = (gp.player.worldX + gp.player.solidArea.x)/gp.tileSize;
+//            int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
             searchPath(goalCol, goalRow);
             finishedPath = true;
-            speed = 2;
+        } else if (finishedPath) {
+            int goalCol = 47;
+            int goalRow = 46;
+            searchPath(goalCol, goalRow);
+
+
+
+//            goalCol = 47;
+//            goalRow = 46;
+//            searchPath(goalCol, goalRow);
+//            goalCol = 37;
+//            goalRow = 37;
+//            searchPath(goalCol, goalRow);
+//            goalCol = 60;
+//            goalRow = 46;
+//            searchPath(goalCol, goalRow);
+
 
         } else {
             actionLockCounter++;
