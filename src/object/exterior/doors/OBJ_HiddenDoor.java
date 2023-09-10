@@ -11,8 +11,8 @@ public class OBJ_HiddenDoor extends Object {
 
     public OBJ_HiddenDoor(GamePanel gp, int col, int row) {
         super(gp,col,row);
-        int height = (gp.tileSize*2)-30 ;
-        int width = gp.tileSize+15;
+        int height = gp.tileSize;
+        int width = gp.tileSize;
 
         type = typeObstacle;
         name = objName;

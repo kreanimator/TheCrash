@@ -1,27 +1,27 @@
-package object.exterior.fences;
+package object.exterior.walls;
 
-import entity.Entity;
 import main.GamePanel;
 import object.Object;
 
-public class OBJ_Fence2 extends Object {
+public class WL_BasementWall extends Object {
     GamePanel gp;
-    public final static String objName = "Fence2";
+    public final static String objName = "BasementWall";
 
-    public OBJ_Fence2(GamePanel gp, int col , int row) {
-        super(gp, col ,row);
+    public WL_BasementWall(GamePanel gp, int col, int row) {
+        super(gp, col,row);
         this.gp = gp;
         name = objName;
         speed = 0;
         direction = "down";
         type = typeObstacle;
+
         collision = true;
         getImage();
-        setAction();
+
 
         solidArea.x = 0;
         solidArea.y = gp.tileSize;
-        solidArea.width = gp.tileSize*2;
+        solidArea.width = gp.tileSize * 5;
         solidArea.height = 12;
 
         solidAreaDefaultX = solidArea.x;
@@ -29,10 +29,10 @@ public class OBJ_Fence2 extends Object {
     }
 
     public void getImage() {
-        int width = gp.tileSize *2;
-        int height = gp.tileSize + 24;
+        int height = (gp.tileSize*2) ;
+        int width = (gp.tileSize * 6) + 12;
 
-        down1 = setup("tiles/exterior/fence2", width, height);
+        down1 = setup("tiles/wall/basementWall", width, height);
 
     }
 
@@ -41,3 +41,4 @@ public class OBJ_Fence2 extends Object {
         gp.player.shotCanceled = false;
     }
 }
+

@@ -28,8 +28,8 @@ public class OBJ_Comode2 extends Object {
     }
 
     public void getImage() {
-        int width = gp.tileSize+12;
-        int height = (gp.tileSize*2)-12;
+        int width = gp.tileSize + 6;
+        int height = (gp.tileSize*2);
 
         down1 = setup("tiles/interior/closets/comode2", width, height);
     }

@@ -9,13 +9,18 @@ import object.exterior.crates.*;
 import object.exterior.doors.*;
 import object.exterior.fences.*;
 import object.exterior.ladders.OBJ_LadderDown1;
+import object.exterior.ladders.OBJ_LadderUp1;
 import object.exterior.tires.*;
 import object.exterior.toilets.*;
+import object.interior.bath.OBJ_Douche2;
+import object.interior.bath.OBJ_Douche3;
 import object.interior.beds.*;
 import object.interior.beds.matresses.*;
 import object.interior.chairs.*;
 import object.exterior.fridges.*;
 import object.interior.bar.*;
+import object.interior.closets.OBJ_Comode1;
+import object.interior.closets.OBJ_Comode2;
 import object.interior.kitchen.*;
 import object.interior.lockers.*;
 import object.interior.shelves.*;
@@ -115,6 +120,7 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Fence3(gp,17,21);i++;
         gp.obj[mapNum][i] = new OBJ_Fence4(gp,19,21);i++;
         gp.obj[mapNum][i] = new OBJ_Fence3(gp,21,21);i++;
+
 
 
 
@@ -417,6 +423,8 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Garbage2(gp,31,69);i++;
         gp.obj[mapNum][i] = new OBJ_Garbage3(gp,27,69);i++;
 
+        gp.obj[mapNum][i] =new OBJ_Comode1(gp,36,81);i++;
+
 
         //OBJECTS
         gp.obj[mapNum][i] = new OBJ_Toilet2(gp,25,70);i++;
@@ -450,6 +458,42 @@ public class AssetSetter {
         //LEVEL 4
         mapNum = 3;
         i=0;
+
+
+        //LEVEL 1 Easter Egg
+        mapNum = 4;
+        i=0;
+
+        gp.obj[mapNum][i] = new OBJ_LadderUp1(gp,45,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator(gp,36,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator(gp,37,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator(gp,38,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator1(gp,40,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator2(gp,56,31);i++;
+        gp.obj[mapNum][i] = new OBJ_Generator1(gp,59,31);i++;
+
+        gp.obj[mapNum][i] = new OBJ_Fence1(gp,41,35);i++;
+        gp.obj[mapNum][i] = new OBJ_Fence2(gp,39,35);i++;
+
+        gp.obj[mapNum][i] =new OBJ_Fence1(gp,36,35);i++;
+
+        gp.obj[mapNum][i] =new OBJ_ToxicBarrels2(gp,62,46);i++;
+        gp.obj[mapNum][i] =new OBJ_ToxicBarrels1(gp,57,42);i++;
+
+        gp.obj[mapNum][i] =new OBJ_Bed11(gp,50,46);i++;
+        gp.obj[mapNum][i] =new OBJ_Table1(gp,48,48);i++;
+        gp.obj[mapNum][i] =new OBJ_Table3(gp,49,48);i++;
+        gp.obj[mapNum][i] =new OBJ_Chair5(gp,48,46);i++;
+
+        gp.obj[mapNum][i] =new WL_Sidewall(gp,42,47);i++;
+        gp.obj[mapNum][i] =new WL_Sidewall(gp,42,45);i++;
+
+        gp.obj[mapNum][i] =new WL_BasementWall(gp,36,44);i++;
+
+        gp.obj[mapNum][i] =new OBJ_Douche3(gp,36,44);i++;
+        gp.obj[mapNum][i] =new OBJ_Comode1(gp,38,44);i++;
+        gp.obj[mapNum][i] =new OBJ_Comode2(gp,39,44);i++;
+//        gp.obj[mapNum][i] =new OBJ_Door(gp,41,44);i++;
 
 
     }
@@ -511,6 +555,12 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,11,12);i++;
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,34,84);i++;
         gp.iTile[mapNum][i] = new IT_MetalPlate(gp,87,59);
+
+        //Level1 EasterEgg
+        mapNum = 4;
+        i=0;
+
+        gp.iTile[mapNum][i] = new IT_Toilet(gp,36,47);i++;
     }
     public void setNPC() {
         int mapNum = 0;
@@ -534,6 +584,13 @@ public class AssetSetter {
 
         mapNum = 3;
         i=0;
+//Level1 EasterEgg
+        mapNum = 4;
+        i=0;
+        gp.npc[mapNum][i] = new NPC_Brain(gp,38,40);i++;
+        gp.npc[mapNum][i] = new NPC_Pinky(gp,40,40);i++;
+
+
 
     }
 
@@ -580,6 +637,13 @@ public class AssetSetter {
         if(!Progress.slimeBossDefeated) {
             gp.enemy[mapNum][i] = new SlimeBoss(gp,52,44);
         }
+
+
+        // Level 1 Easter egg
+        mapNum =4;
+        i=0;
+
+
     }
 
 }
