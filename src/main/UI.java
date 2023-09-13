@@ -21,6 +21,7 @@ public class UI {
     Graphics2D g2;
     public Font myFont;
     BufferedImage hpfull, hphalf, hpblank, pistolAmmo, shotgunAmmo, coin,background;
+    BufferedImage frame1;
 
     public String currentDialogue = "";
     public String currentQuest = "";
@@ -80,7 +81,8 @@ public class UI {
 
         g2.setFont(myFont);
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-        g2.setColor(Color.WHITE);
+
+        g2.setColor(new Color(201, 236, 133));
         //TITLE STATE
         if (gp.gameState == gp.titleState) {
             drawTitleScreen();
@@ -91,8 +93,10 @@ public class UI {
             drawplayerlife();
             drawEnemyLife();
             drawPlayerAmmo();
+            drawInformationScreen();
             drawMessage();
             drawStatus();
+
 
 
         }
@@ -174,24 +178,24 @@ public class UI {
 
         //DRAW PLAYERS ITEMS
 
-        for (int i = 0; i < entity.inventory.size(); i++) {
+        for (int i = 0; i < Entity.inventory.size(); i++) {
 
             //EQUIP CURSOR
 
-            if (entity.inventory.get(i) == entity.currentWeapon || entity.inventory.get(i) == entity.currentArmor
-                    || entity.inventory.get(i) == entity.currentLight || entity.inventory.get(i) == entity.currentShield) {
-                g2.setColor(new Color(227, 176, 21));
+            if (Entity.inventory.get(i) == entity.currentWeapon || Entity.inventory.get(i) == entity.currentArmor
+                    || Entity.inventory.get(i) == entity.currentLight || Entity.inventory.get(i) == entity.currentShield) {
+                g2.setColor(new Color(248, 183, 27));
                 g2.fillRoundRect(slotX, slotY, gp.tileSize, gp.tileSize, 10, 10);
             }
-            g2.drawImage(entity.inventory.get(i).down1, slotX, slotY,gp.tileSize,gp.tileSize, null);
+            g2.drawImage(Entity.inventory.get(i).down1, slotX, slotY,gp.tileSize,gp.tileSize, null);
 
             //DISPLAY THE AMOUNT
 
-            if (entity == gp.player && entity.inventory.get(i).amount > 1) {
+            if (entity == gp.player && Entity.inventory.get(i).amount > 1) {
                 g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 8f));
                 int amountX;
                 int amountY;
-                String s = "" + entity.inventory.get(i).amount;
+                String s = "" + Entity.inventory.get(i).amount;
                 amountX = getXforAlignToRight(s, slotX + 44);
                 amountY = slotY + gp.tileSize;
                 //SHADOW
@@ -217,8 +221,11 @@ public class UI {
             int cursorHeight = gp.tileSize;
 
             //DRAWCURSOR
+//            g2.setColor(new Color(201, 236, 133));
             g2.setColor(Color.WHITE);
             g2.setStroke(new BasicStroke(3));
+//            cursor1 = setup("ui/inventory/Frame_03",cursorWidth,cursorHeight);
+//            g2.drawImage(cursor1,cursorX,cursorY,null);
             g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
 
             //DESCRIPTION FRAME
@@ -237,9 +244,9 @@ public class UI {
 
             int itemIndex = getItemIndex(slotCol, slotRow);
 
-            if (itemIndex < entity.inventory.size()) {
+            if (itemIndex < Entity.inventory.size()) {
                 drawSubWindow(dFramex, dFrameY, dFrameWidth, dFrameHeight);
-                for (String line : entity.inventory.get(itemIndex).description.split("\n")) {
+                for (String line : Entity.inventory.get(itemIndex).description.split("\n")) {
 
                     g2.drawString(line, textX, textY);
                     textY += 32;
@@ -356,13 +363,14 @@ public class UI {
 
     private void drawMessage() {
         int messageX = gp.tileSize;
-        int messageY = gp.tileSize * 4;
+        int messageY = gp.tileSize * 12;
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 10f));
         for (int i = 0; i < message.size(); i++) {
             if (message.get(i) != null) {
                 g2.setColor(Color.BLACK);
                 g2.drawString(message.get(i), messageX + 2, messageY + 2);
-                g2.setColor(Color.WHITE);
+                g2.setColor(new Color(201, 236, 133));
+                //g2.setColor(Color.WHITE);
                 g2.drawString(message.get(i), messageX, messageY);
                 int counter = messageCounter.get(i) + 1;
                 messageCounter.set(i, counter);
@@ -395,7 +403,8 @@ public class UI {
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
             //MAIN COLOR
-            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
+//            g2.setColor(Color.WHITE);
             g2.drawString(text, x, y);
 
             //IMAGE
@@ -415,7 +424,8 @@ public class UI {
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
             //MAIN COLOR
-            g2.setColor(Color.WHITE);
+//            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 0) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -430,7 +440,8 @@ public class UI {
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
             //MAIN COLOR
-            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
+            //g2.setColor(Color.WHITE);
             g2.drawString(text, x, y);
             if (commandNumber == 1) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -444,7 +455,8 @@ public class UI {
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
             //MAIN COLOR
-            g2.setColor(Color.WHITE);
+            //g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 2) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -457,7 +469,8 @@ public class UI {
             int y = gp.tileSize * 3;
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
-            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
+            //g2.setColor(Color.WHITE);
             g2.drawString(text, x, y);
 
             //GUNSLINGER
@@ -467,7 +480,8 @@ public class UI {
             y += gp.tileSize * 2;
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
-            g2.setColor(Color.WHITE);
+            //g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 0) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -479,7 +493,8 @@ public class UI {
             y += gp.tileSize * 2;
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
-            g2.setColor(Color.WHITE);
+            //g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 1) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -492,7 +507,8 @@ public class UI {
             y += gp.tileSize * 2;
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
-            g2.setColor(Color.WHITE);
+            //g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 2) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -504,7 +520,8 @@ public class UI {
             y += gp.tileSize * 2;
             g2.setColor(Color.DARK_GRAY);
             g2.drawString(text, x + 5, y + 5);
-            g2.setColor(Color.WHITE);
+            //g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.drawString(text, x, y);
             if (commandNumber == 3) {
                 g2.drawString(">", x - gp.tileSize, y);
@@ -570,6 +587,52 @@ public class UI {
         }
 
     }
+    private void drawInformationScreen(){
+        final int frameX = 10;
+        final int frameY = gp.tileSize * 11 -10;
+        final int frameWidth = gp.tileSize * 5;
+        final int frameHeight = gp.tileSize * 3;
+
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        int frame1X = gp.tileSize + 20;
+        int frame1Y = (gp.tileSize * 10)+10;
+        int frame1Width = gp.tileSize/2;
+        int frame1Height = gp.tileSize/2;
+
+        //DRAWSTATUSFRAME
+        //1
+        g2.setColor(new Color(201, 236, 133));
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        Color c = new Color(0, 0, 0, 200);
+        g2.setColor(c);
+        g2.fillRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        //2
+        frame1X = frame1X + frame1Width+3;
+        g2.setColor(new Color(201, 236, 133));
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        g2.setColor(c);
+        g2.fillRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        //3
+        frame1X = frame1X + frame1Width+3;
+        g2.setColor(new Color(201, 236, 133));
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        g2.setColor(c);
+        g2.fillRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        //4
+        frame1X = frame1X + frame1Width+3;
+        g2.setColor(new Color(201, 236, 133));
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        g2.setColor(c);
+        g2.fillRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+
+
+
+    }
 
     private void drawCharScreen() {
         final int frameX = gp.tileSize * 2;
@@ -580,7 +643,8 @@ public class UI {
 
         //TEXT
 
-        g2.setColor(Color.WHITE);
+//        g2.setColor(Color.WHITE);
+        g2.setColor(new Color(201, 236, 133));
         g2.setFont(g2.getFont().deriveFont(20f));
         int textX = frameX + gp.tileSize / 2;
         int textY = frameY + gp.tileSize;
@@ -720,7 +784,8 @@ public class UI {
     }
 
     private void drawOptionsScreen() {
-        g2.setColor(Color.WHITE);
+        //g2.setColor(Color.WHITE);
+        g2.setColor(new Color(201, 236, 133));
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20f));
 
         //SUB WINDOW
@@ -775,7 +840,8 @@ public class UI {
         }
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
 
-        g2.setColor(Color.WHITE);
+        //g2.setColor(Color.WHITE);
+        g2.setColor(new Color(201, 236, 133));
         g2.setFont(g2.getFont().deriveFont(20f));
         int headerX = frameX + gp.tileSize * 2;
         int headerY = frameY + gp.tileSize;
@@ -813,11 +879,12 @@ public class UI {
             int cursorHeight = gp.tileSize;
 
             //DRAWCURSOR
-            g2.setColor(Color.WHITE);
+//            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(201, 236, 133));
             g2.setStroke(new BasicStroke(3));
             g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
-            for (int i = 0; i < Entity.quest.size(); i++) {
-                g2.drawString(Entity.quest.get(i).name,slotX, slotY+30);
+            for (int i = 0; i < entity.quest.size(); i++) {
+                g2.drawString(entity.quest.get(i).name,slotX, slotY+30);
             }
 
             //DESCRIPTION FRAME
@@ -1335,7 +1402,7 @@ public class UI {
         g2.setColor(c);
         g2.fillRoundRect(x, y, width, height, 45, 45);
 
-        c = new Color(255, 255, 255);
+        c = new Color(201, 236, 133);
         g2.setStroke(new BasicStroke(5));
         g2.setColor(c);
         g2.drawRoundRect(x + 5, y + 5, width - 10, height - 10, 35, 35);
@@ -1367,6 +1434,21 @@ public class UI {
         int length = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = tailX - length;
         return x;
+    }
+    public BufferedImage setup(String imagePath, int width, int height) {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/resources/" + imagePath + ".png")));
+            image = uTool.scaleImage(image, width, height);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+
     }
 
 }

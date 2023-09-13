@@ -22,7 +22,7 @@ public class GreenSlime extends Enemy {
         speed = defaultSpeed;
         maxHP = 4;
         life = maxHP;
-        attack = 5;
+        attack = 4;
         defense = 0;
         exp = 10;
 
