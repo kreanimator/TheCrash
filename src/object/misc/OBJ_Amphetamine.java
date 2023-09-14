@@ -1,6 +1,7 @@
 package object.misc;
 
 import entity.Entity;
+import entity.Player;
 import main.GamePanel;
 
 public class OBJ_Amphetamine extends Entity {
@@ -31,7 +32,7 @@ public class OBJ_Amphetamine extends Entity {
         startDialogue(this,0);
 
         entity.speed += value;
-        gp.player.underEffect = true;
+        Player.underEffect = true;
         gp.playSE(34);
         gp.player.timesUsed++;
 

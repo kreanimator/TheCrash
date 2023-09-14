@@ -22,6 +22,7 @@ public class UI {
     public Font myFont;
     BufferedImage hpfull, hphalf, hpblank, pistolAmmo, shotgunAmmo, coin,background;
     BufferedImage frame1;
+    BufferedImage addiction, hangover, speed, defense;
 
     public String currentDialogue = "";
     public String currentQuest = "";
@@ -1409,19 +1410,32 @@ public class UI {
 
     }
     public void drawStatus(){
+
+        if (Player.underEffect){
+            int x = gp.tileSize + 20;
+            int y = (gp.tileSize * 10)+10;
+
+            speed = setup("ui/statusIcons/speed",gp.tileSize/2,gp.tileSize/2);
+            g2.drawImage(speed,x,y,null);
+        }
+        if (Player.drunk){
+            int x = (gp.tileSize*2)-1;
+            int y = (gp.tileSize * 10)+10;
+            defense = setup("ui/statusIcons/defense",gp.tileSize/2,gp.tileSize/2);
+            g2.drawImage(defense,x,y,null);
+        }
         if (Player.addict){
-            int x = gp.screenWidth/2;
-            int y = gp.tileSize;
-            g2.setFont(gp.ui.myFont.deriveFont(20f));
-            g2.setColor(Color.GREEN);
-            g2.drawString("[ADDICTED]",x,y);
+            int x = gp.tileSize + 20;
+            int y = (gp.tileSize * 10)+10;
+
+            addiction = setup("ui/statusIcons/addiction",gp.tileSize/2,gp.tileSize/2);
+            g2.drawImage(addiction,x,y,null);
         }
         if (Player.hangover){
-            int x = gp.screenWidth/2 - (gp.tileSize *4);
-            int y = gp.tileSize;
-            g2.setFont(gp.ui.myFont.deriveFont(20f));
-            g2.setColor(Color.GREEN);
-            g2.drawString("[HANGOVER]",x,y);
+            int x = (gp.tileSize*2)-1;
+            int y = (gp.tileSize * 10)+10;
+            hangover = setup("ui/statusIcons/hangover",gp.tileSize/2,gp.tileSize/2);
+            g2.drawImage(hangover,x,y,null);
         }
     }
 
