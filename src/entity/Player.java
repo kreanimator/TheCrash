@@ -26,8 +26,8 @@ public class Player extends Entity {
     public boolean updateLight = false;
     public static boolean underEffect;
     public static boolean drunk;
-    public static boolean addict = false;
-    public static boolean hangover = false;
+    public static boolean addict;
+    public static boolean hangover;
 
     int standCounter = 0;
     public int timesUsed = 0;
@@ -354,13 +354,15 @@ public class Player extends Entity {
                 addict = true;
                 addictionCounter++;
                 speed = 1;
-                timesUsed = 0;
+
                 if(addictionCounter == 600){
-                    addict = false;
                     speed = defaultSpeed;
+                    addict = false;
                     addictionCounter = 0;
+                    timesUsed = 0;
                 }
             }
+
 
 
             if(drunk){
@@ -376,15 +378,17 @@ public class Player extends Entity {
                 hangover = true;
                 hangoverCounter++;
                 defense = 0;
-                timesDrinked =0;
+
+                if (hangoverCounter == 600){
+
+                    defense = getDefense();
+                    hangover = false;
+                    hangoverCounter = 0;
+                    timesDrinked =0;
+                }
 
             }
-            if (hangoverCounter == 600){
 
-                defense = getDefense();
-                hangover = false;
-                hangoverCounter = 0;
-            }
 
 
 

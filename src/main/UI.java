@@ -1424,12 +1424,15 @@ public class UI {
             defense = setup("ui/statusIcons/defense",gp.tileSize/2,gp.tileSize/2);
             g2.drawImage(defense,x,y,null);
         }
+
         if (Player.addict){
             int x = gp.tileSize + 20;
             int y = (gp.tileSize * 10)+10;
 
             addiction = setup("ui/statusIcons/addiction",gp.tileSize/2,gp.tileSize/2);
             g2.drawImage(addiction,x,y,null);
+            //DEBUG
+//            g2.drawString(String.valueOf(gp.player.addictionCounter),x, y-20);
         }
         if (Player.hangover){
             int x = (gp.tileSize*2)-1;

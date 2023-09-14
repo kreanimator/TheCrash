@@ -37,6 +37,7 @@ public class OBJ_Amphetamine extends Entity {
         gp.player.timesUsed++;
 
 
+
         return true;
 
     }
