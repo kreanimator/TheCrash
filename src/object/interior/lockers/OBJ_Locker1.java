@@ -33,6 +33,10 @@ public class OBJ_Locker1 extends Object {
     }
 
 
+    public OBJ_Locker1(GamePanel gp) {
+        super(gp);
+    }
+
 
     public void setLoot(Entity loot) {
         this.loot = loot;

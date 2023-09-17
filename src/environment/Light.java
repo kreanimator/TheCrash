@@ -5,24 +5,21 @@ import main.GamePanel;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Light {
-    GamePanel gp;
+public class Light extends Lighting{
+    static GamePanel gp;
     BufferedImage darknessFilter;
-    public int dayCounter = 0;
+
     public float filterAlfa = 0f;
-    public final int day =0;
-    public final int dusk = 1;
-    public final int night = 2;
-    public final int dawn = 3;
-    public int dayState = day;
-    public boolean nightOn = false;
+
 
     public Light(GamePanel gp) {
+        super(gp);
+
         this.gp = gp;
-        setLight();
+        setEnvLight();
     }
 
-    public void setLight() {
+    public  void setEnvLight() {
         // Create a buffered image
         darknessFilter = new BufferedImage(gp.screenWidth, gp.screenHeight, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = (Graphics2D) darknessFilter.getGraphics();
@@ -30,9 +27,8 @@ public class Light {
         for (int i = 0; i < gp.lightSources[1].length; i++) {
             if (gp.lightSources[gp.currentMap][i] != null) {
                 // Get the center x and y of the light circle
-                int centerX = gp.lightSources[gp.currentMap][i].worldX * gp.tileSize / 2;
-
-                int centerY = gp.lightSources[gp.currentMap][i].worldY * gp.tileSize / 2;
+                int centerX = gp.lightSources[gp.currentMap][i].getScreenX() + gp.tileSize / 2;
+                int centerY = gp.lightSources[gp.currentMap][i].getScreenY() + gp.tileSize / 2;
 
                 // Create a gradation effect
                 Color[] color = new Color[12];
@@ -71,7 +67,7 @@ public class Light {
                 g2.setPaint(gPaint);
 
 
-                g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+                //g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
                 g2.dispose();
             }
@@ -98,37 +94,7 @@ public class Light {
                     setLight();
                     gp.lightSources[gp.currentMap][i].updateLight = false;
                 }
-                if (dayState == day) {
-                    dayCounter++;
 
-                    if (dayCounter > 6000) {
-                        dayState = dusk;
-                        dayCounter = 0;
-                    }
-                }
-                if (dayState == dusk) {
-                    filterAlfa += 0.001f;
-                    if (filterAlfa > 1f) {
-                        filterAlfa = 1f;
-                        dayState = night;
-                    }
-                }
-                if (dayState == night) {
-                    dayCounter++;
-                    nightOn = true;
-                    if (dayCounter > 6000) {
-                        dayState = dawn;
-                        dayCounter = 0;
-                    }
-                }
-                if (dayState == dawn) {
-                    filterAlfa -= 0.001f;
-                    nightOn = false;
-                    if (filterAlfa < 0) {
-                        filterAlfa = 0f;
-                        dayState = day;
-                    }
-                }
             }
         }
     }

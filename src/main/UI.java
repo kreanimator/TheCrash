@@ -364,8 +364,8 @@ public class UI {
 
     private void drawMessage() {
         int messageX = gp.tileSize;
-        int messageY = gp.tileSize * 12;
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 10f));
+        int messageY = (gp.tileSize * 12)-24;
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 8f));
         for (int i = 0; i < message.size(); i++) {
             if (message.get(i) != null) {
                 g2.setColor(Color.BLACK);
@@ -375,7 +375,7 @@ public class UI {
                 g2.drawString(message.get(i), messageX, messageY);
                 int counter = messageCounter.get(i) + 1;
                 messageCounter.set(i, counter);
-                messageY += 50;
+                messageY += 24;
 
                 if (messageCounter.get(i) > 180) {
                     message.remove(i);

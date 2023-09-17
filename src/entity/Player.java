@@ -366,10 +366,10 @@ public class Player extends Entity {
 
 
             if(drunk){
-                useCounter++;
+                drinkCounter++;
 
             }
-            if (useCounter == 600){
+            if (drinkCounter == 1200){
                 defense = getDefense();
                 drunk = false;
                 useCounter = 0;
@@ -557,7 +557,7 @@ public class Player extends Entity {
             else {
                 if (canObtainItem(gp.obj[gp.currentMap][i])) {
                     gp.playSE(1);
-                    text = " Got a " + gp.obj[gp.currentMap][i].name + "!";
+                    text = "Got a " + gp.obj[gp.currentMap][i].name + "!";
                 } else {
                     text = "Inventory is full!";
                 }

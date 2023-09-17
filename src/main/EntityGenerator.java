@@ -32,7 +32,7 @@ public class EntityGenerator {
 //            case OBJ_GarbageTrunkl.objName -> new OBJ_GarbageTrunkl();
 //            case OBJ_GarbageTrunkr.objName -> new OBJ_GarbageTrunkr();
             //case OBJ_IronDoor.objName -> new OBJ_IronDoor(gp);
-//            case OBJ_Locker1.objName -> new OBJ_Locker1();
+            case OBJ_Locker1.objName -> new OBJ_Locker1(gp);
 //            case OBJ_Locker2.objName -> new OBJ_Locker2();
 //            case OBJ_Locker3.objName -> new OBJ_Locker3();
 //            case OBJ_Locker4.objName -> new OBJ_Locker4();

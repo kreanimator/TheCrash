@@ -22,8 +22,8 @@ public class Lighting {
     public final int dawn = 3;
     public int dayState = day;
     public boolean nightOn = false;
-    Entity entity;
-    BufferedImage sun, sunset, sunrise, moon;
+
+
 
 
     public Lighting(GamePanel gp) {
@@ -79,6 +79,8 @@ public class Lighting {
 
             // Set the gradient data on g2
             g2.setPaint(gPaint);
+
+
         }
 
         g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
@@ -139,6 +141,16 @@ public class Lighting {
 
 
         //DEBUG
+        int frame1X = gp.tileSize * 20;
+        int frame1Y = gp.tileSize/2;
+        int frame1Width = gp.tileSize;
+        int frame1Height = gp.tileSize;
+        g2.setColor(new Color(201, 236, 133));
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
+        Color c = new Color(0, 0, 0, 200);
+        g2.setColor(c);
+        g2.fillRoundRect(frame1X, frame1Y, frame1Width, frame1Height, 10, 10);
         BufferedImage currentDayState = switch (dayState) {
             case day -> setup("ui/daystate/sun", gp.tileSize, gp.tileSize);
             case night -> setup("ui/daystate/moon", gp.tileSize, gp.tileSize);

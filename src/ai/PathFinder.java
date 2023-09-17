@@ -87,10 +87,10 @@ public class PathFinder {
                 node[oCol][oRow].solid = true;
 
                 //Assigning collision for additional tiles
-                    for (int j = 0; j <= oSizeCol; j++){
-                        for(int k = 0; k <= oSizeRow; k++){
-                    int nextCol = oCol + j;
-                    int nextRow = oRow +k;
+                    for (int j = 0; j <= oSizeCol; j++) {
+                        for (int k = 0; k <= oSizeRow; k++) {
+                            int nextCol = oCol + j;
+                            int nextRow = oRow + k;
                             node[nextCol][nextRow].solid = true;
                         }
                     }

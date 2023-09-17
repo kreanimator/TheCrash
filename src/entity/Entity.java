@@ -69,6 +69,7 @@ public class Entity {
     public int guardCounter = 0;
     public int offBalanceCounter = 0;
     public int useCounter = 0;
+    public int drinkCounter = 0;
 
     //CHARACTERS ATRIBUTES
     public String name;

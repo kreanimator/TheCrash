@@ -11,4 +11,11 @@ public class Object extends Entity {
         this.worldY = gp.tileSize * row;
     }
 
+    public Object() {
+
+    }
+
+    public Object(GamePanel gp) {
+        this.gp=gp;
+    }
 }

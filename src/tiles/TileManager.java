@@ -547,7 +547,7 @@ public class TileManager {
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY;
 
-            //Stop moving camera a t the edge
+            //Stop moving camera at the edge
 
             if(gp.player.screenX > gp.player.worldX){
                 screenX =worldX;
