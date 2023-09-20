@@ -76,14 +76,23 @@ public class Lighting {
 
             // Create a gradation paint settings
             RadialGradientPaint gPaint = new RadialGradientPaint(centerX, centerY, gp.player.currentLight.lightRadius, fraction, color);
+//            for (int i = 0; i < gp.lightSources[1].length; i++) {
+//                if (gp.lightSources[gp.currentMap][i] != null) {
+//                    int centerLSX =gp.lightSources[gp.currentMap][i].worldX+ (gp.tileSize / 2);
+//                    int centerLSY =gp.lightSources[gp.currentMap][i].worldY + (gp.tileSize / 2);
+//                    RadialGradientPaint g2Paint = new RadialGradientPaint(centerLSX, centerLSY, gp.lightSources[gp.currentMap][i].lightRadius, fraction, color);
+//                    g2.setPaint(g2Paint);
+//                }
+//            }
 
             // Set the gradient data on g2
             g2.setPaint(gPaint);
 
 
+
         }
 
-        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+        g2.fillRect(0, 0, gp.worldWidth, gp.worldHeight);
 
         g2.dispose();
     }

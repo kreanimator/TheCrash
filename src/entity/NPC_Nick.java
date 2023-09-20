@@ -26,6 +26,7 @@ public class NPC_Nick extends NPC{
         onPath = true;
 
 
+
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         dialogueSet = -1;

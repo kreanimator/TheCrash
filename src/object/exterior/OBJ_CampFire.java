@@ -5,8 +5,10 @@ import entity.LightSource;
 import entity.NPC;
 import environment.Light;
 import main.GamePanel;
+import object.Object;
+import tile_interactive.InteractiveTile;
 
-public class OBJ_CampFire extends LightSource {
+public class OBJ_CampFire extends Object {
     GamePanel gp;
     public final static String objName = "Campfire";
 
@@ -17,7 +19,7 @@ public class OBJ_CampFire extends LightSource {
         name = objName;
         speed = 0;
         direction = "down";
-        type = typeObstacle;
+        type = typeLight;
         lightRadius = 300;
         collision = true;
         updateLight = true;

@@ -34,6 +34,7 @@ public class Player extends Entity {
     public int timesDrinked = 0;
     public int addictionCounter = 0;
     public int hangoverCounter = 0;
+    public int batteryCounter = 0;
 
 
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -492,6 +493,7 @@ public class Player extends Entity {
             gp.playSE(19);
         }
         }
+
     }
 
     public int getDefense() {
@@ -706,6 +708,7 @@ public class Player extends Entity {
                 }
             }
             updateLight = true;
+
             if (selectedItem.type == typeConsumable) {
                 if (selectedItem.use(this)) {
                     if (selectedItem.amount > 1) {

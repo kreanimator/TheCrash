@@ -441,6 +441,7 @@ public class AssetSetter {
         gp.obj[mapNum][i].setLoot(new OBJ_Tent(gp));i++;
 
 
+
         //LEVEL 2
         mapNum =1;
         i=0;
@@ -544,6 +545,7 @@ public class AssetSetter {
         gp.iTile[mapNum][i] = new IT_Vase(gp,17,82);i++;
         gp.iTile[mapNum][i] = new IT_Vase(gp,16,82);i++;
         gp.iTile[mapNum][i] = new IT_Vase(gp,15,82);i++;
+
 
 
 

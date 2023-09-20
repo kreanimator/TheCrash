@@ -12,6 +12,7 @@ import tiles.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -73,6 +74,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Entity[][] enemy = new Entity[maxMap][500];
     public InteractiveTile[][] iTile = new InteractiveTile[maxMap][200];
     public Entity[][] projectile = new Entity[maxMap][20];
+    //BufferedImage[][] darknessFilter = new BufferedImage[maxMap][500];
     //    public ArrayList <Entity> projectilesList = new ArrayList<>();
     public ArrayList<Entity> particleList = new ArrayList<>();
     ArrayList<Entity> entityList = new ArrayList<>();
@@ -224,6 +226,7 @@ public class GamePanel extends JPanel implements Runnable {
                     lightSources[currentMap][i].update();
                 }
             }
+
 
             //ENEMIES
             for (int i = 0; i < enemy[1].length; i++) {
